@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="DoYouWannaJam2026"
+run/main_scene="uid://chadviptwb3hu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalManager="*uid://ckwy3unyjrnr5"
 
 [display]
 

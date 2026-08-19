@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://chadviptwb3hu"]
+
+[ext_resource type="PackedScene" uid="uid://ba42j0sthxclm" path="res://seb_test/test_btn.tscn" id="1_pq8q7"]
+[ext_resource type="Texture2D" uid="uid://b8npn0b68pipu" path="res://brain_temp.png" id="1_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="2_pyidc"]
+
+[node name="Root" type="Node2D" unique_id=1361942033]
+
+[node name="BrainTemp" type="Sprite2D" parent="." unique_id=922941903]
+position = Vector2(276.00003, 195.00002)
+scale = Vector2(0.6992397, 0.70150274)
+texture = ExtResource("1_vvh5c")
+
+[node name="ScoreLabel" parent="." unique_id=676694139 instance=ExtResource("2_pyidc")]
+offset_left = 74.0
+offset_top = 72.0
+offset_right = 156.0
+offset_bottom = 95.0
+text = "Score: XXX"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TestBtn" parent="." unique_id=481664849 instance=ExtResource("1_pq8q7")]
+offset_left = 196.0
+offset_top = 123.0
+offset_right = 240.0
+offset_bottom = 147.0
+
+[node name="TestBtn2" parent="." unique_id=343165755 instance=ExtResource("1_pq8q7")]
+offset_left = 283.0
+offset_top = 138.0
+offset_right = 327.0
+offset_bottom = 162.0
+
+[node name="TestBtn3" parent="." unique_id=1071438360 instance=ExtResource("1_pq8q7")]
+offset_left = 312.0
+offset_top = 237.0
+offset_right = 356.0
+offset_bottom = 261.0
+
+[node name="TestBtn4" parent="." unique_id=843766490 instance=ExtResource("1_pq8q7")]
+offset_left = 354.0
+offset_top = 192.0
+offset_right = 398.0
+offset_bottom = 216.0
+
+[node name="TestBtn5" parent="." unique_id=331436631 instance=ExtResource("1_pq8q7")]
+offset_left = 285.0
+offset_top = 88.0
+offset_right = 329.0
+offset_bottom = 112.0
+
+[node name="TestBtn6" parent="." unique_id=1435321999 instance=ExtResource("1_pq8q7")]
+offset_left = 299.0
+offset_top = 281.0
+offset_right = 343.0
+offset_bottom = 305.0

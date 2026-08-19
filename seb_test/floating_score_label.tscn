@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3xggxi4t0i6n"]
+
+[ext_resource type="Script" uid="uid://3uvb1koaqj4g" path="res://seb_test/floating_score_label.gd" id="1_3pkof"]
+
+[node name="FloatingScoreLabel" type="RichTextLabel" unique_id=2029776562]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3pkof")

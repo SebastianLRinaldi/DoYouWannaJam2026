@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cynmgy21bkq3b"]
+
+[ext_resource type="Script" uid="uid://debcr4tr6o2mk" path="res://seb_test/score_label.gd" id="1_1dwqw"]
+[ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="2_o5nqu"]
+
+[node name="ScoreLabel" type="RichTextLabel" unique_id=676694139]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dwqw")
+
+[node name="FloatingScoreLabel" parent="." unique_id=2029776562 instance=ExtResource("2_o5nqu")]
+layout_mode = 0
+anchors_preset = 0
