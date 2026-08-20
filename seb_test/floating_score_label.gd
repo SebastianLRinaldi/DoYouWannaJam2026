@@ -11,7 +11,7 @@ func add_floating_label(text:String):
 	float_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	float_label.z_index = 10
 	float_label.top_level = true
-	float_label.global_position = self.global_position + Vector2(50,10)
+	float_label.global_position = self.global_position #+ Vector2(50,10)
 	float_label.global_position.x -= float_label.size.x/2.0
 	float_label.global_position.y -= float_label.size. y
 	add_child(float_label)
@@ -25,7 +25,7 @@ func add_floating_label(text:String):
 
 	# Move the float_label up and on a random side
 	var x = randf_range(-50, 50)
-	var y = -100.0
+	var y = 0
 
 	tween. tween_property(float_label, "position:x", x, 1.0).as_relative()
 
