@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://beerfo7k8ksm4"]
+
+[ext_resource type="PackedScene" uid="uid://deprwwe8vqcsv" path="res://base.tscn" id="1_44gc5"]
+[ext_resource type="PackedScene" uid="uid://cisoxinlhb4w6" path="res://node_2d.tscn" id="1_jotil"]
+
+[node name="testscene" type="Node2D" unique_id=940124183]
+
+[node name="StaticBody2D" parent="." unique_id=539824347 instance=ExtResource("1_44gc5")]
+position = Vector2(10, 171)
+
+[node name="drag_drop" parent="." unique_id=310310837 instance=ExtResource("1_jotil")]
+position = Vector2(33, 53)
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." unique_id=638760193]
+position = Vector2(32.985657, 52.384087)
+node_a = NodePath("../drag_drop")
+node_b = NodePath("../StaticBody2D")
+length = 120.0
