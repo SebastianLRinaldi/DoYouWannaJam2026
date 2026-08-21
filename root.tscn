@@ -25,11 +25,13 @@ offset_left = 49.0
 offset_top = 2.0
 offset_right = 131.0
 offset_bottom = 187.0
+mouse_filter = 2
 alignment = 1
 
 [node name="TotalScore" parent="VBoxContainer" unique_id=676694139 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -38,6 +40,7 @@ vertical_alignment = 1
 [node name="FLScore" parent="VBoxContainer" unique_id=1435402187 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -46,6 +49,7 @@ vertical_alignment = 1
 [node name="FLScore2" parent="VBoxContainer" unique_id=1206257340 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -54,6 +58,7 @@ vertical_alignment = 1
 [node name="FLScore3" parent="VBoxContainer" unique_id=988155399 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -62,6 +67,7 @@ vertical_alignment = 1
 [node name="FLScore4" parent="VBoxContainer" unique_id=626233664 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -70,6 +76,7 @@ vertical_alignment = 1
 [node name="FLScore5" parent="VBoxContainer" unique_id=1278262425 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -78,6 +85,7 @@ vertical_alignment = 1
 [node name="FLScore6" parent="VBoxContainer" unique_id=2073635822 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 text = "Score: XXX"
 fit_content = true
 autowrap_mode = 0
@@ -91,12 +99,21 @@ position = Vector2(320, 160)
 
 [node name="EletrodeContainer" type="Node2D" parent="." unique_id=594074508]
 unique_name_in_owner = true
-position = Vector2(28, 189)
+position = Vector2(28, 237)
 
 [node name="ColorRect" type="ColorRect" parent="EletrodeContainer" unique_id=2001571162]
 offset_right = 130.0
 offset_bottom = 130.0
 mouse_filter = 2
+
+[node name="SpawnBandaidButton" type="Button" parent="EletrodeContainer/ColorRect" unique_id=1051780655]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 9.0
+offset_top = 15.0
+offset_right = 117.0
+offset_bottom = 46.0
+text = "new bandaid"
 
 [node name="BrainZone" parent="." unique_id=3999878 instance=ExtResource("4_jnlp7")]
 
@@ -109,7 +126,7 @@ polygon = PackedVector2Array(342, 82, 344, 61, 354, 48, 370, 34, 392, 25, 403, 2
 [node name="BrainZone2" parent="." unique_id=1432211447 instance=ExtResource("4_jnlp7")]
 
 [node name="FloatingScoreLabel" parent="BrainZone2" unique_id=82999669 instance=ExtResource("5_jnlp7")]
-position = Vector2(383, 46)
+position = Vector2(417, 32)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone2" unique_id=892175859]
 polygon = PackedVector2Array(361, 139, 360, 123, 356, 110, 351, 100, 350, 82, 360, 55, 382, 37, 402, 29, 426, 23, 452, 35, 469, 47, 480, 58, 496, 63, 503, 81, 514, 94, 523, 104, 523, 117, 513, 128, 500, 124, 489, 111, 491, 89, 473, 71, 465, 59, 448, 50, 425, 54, 410, 47, 383, 50, 373, 60, 366, 73, 363, 87, 369, 105, 375, 116, 376, 128, 370, 135)
@@ -147,3 +164,4 @@ position = Vector2(405, 257)
 polygon = PackedVector2Array(426, 228, 420, 235, 414, 245, 411, 257, 413, 267, 422, 279, 435, 283, 443, 286, 447, 298, 452, 310, 442, 313, 432, 311, 424, 301, 416, 289, 409, 272, 405, 264, 397, 260, 390, 251, 386, 244, 397, 237, 407, 237, 417, 233, 423, 227)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="EletrodeContainer/ColorRect/SpawnBandaidButton" to="." method="_on_spawn_bandaid_button_pressed"]
