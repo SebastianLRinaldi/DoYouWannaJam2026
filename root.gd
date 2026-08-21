@@ -14,7 +14,7 @@ extends Node2D
 
 const ELECTRODE = preload("uid://bx35ptbx7ue23")
 
-var electrode_count = 15
+var electrode_count = 16
 
 var total_points = 100
 var points_removed
@@ -24,8 +24,8 @@ var points_removed
 func _ready() -> void:
 	var x = 0
 	var y = 0
-	var x_offset = 13
-	var y_offset = 13
+	var x_offset = 26
+	var y_offset = 26
 	for temp_idx in range(electrode_count):
 		var ET = ELECTRODE.instantiate()
 		eletrode_container.add_child(ET)

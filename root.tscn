@@ -94,8 +94,8 @@ unique_name_in_owner = true
 position = Vector2(28, 189)
 
 [node name="ColorRect" type="ColorRect" parent="EletrodeContainer" unique_id=2001571162]
-offset_right = 121.0
-offset_bottom = 129.62317
+offset_right = 130.0
+offset_bottom = 130.0
 mouse_filter = 2
 
 [node name="BrainZone" parent="." unique_id=3999878 instance=ExtResource("4_jnlp7")]
