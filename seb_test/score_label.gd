@@ -10,4 +10,4 @@ extends RichTextLabel
 	#
 #
 func update_score(score_name:String, new_score:int):
-	self.text =  score_name + " Energy: " + str(new_score)
+	self.text =  score_name + ": " + str(new_score)

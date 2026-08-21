@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://j6haidynkg8t" path="res://icon.svg" id="2_qca1a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pst50"]
-radius = 5.0
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx3r7"]
+radius = 15.033297
 
 [node name="Electrode" type="Area2D" unique_id=1752233141]
 script = ExtResource("1_5y8qt")
@@ -14,21 +17,18 @@ script = ExtResource("1_5y8qt")
 shape = SubResource("CircleShape2D_pst50")
 
 [node name="FloatingScoreLabel" parent="." unique_id=2029776562 instance=ExtResource("2_pst50")]
-unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -0.5
-offset_right = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=522057051]
 modulate = Color(1, 1, 1, 0.7294118)
-position = Vector2(0, -1.9073486e-06)
-scale = Vector2(0.0703125, 0.0703125)
+position = Vector2(1.5795231e-06, -3.427267e-07)
+scale = Vector2(0.20312501, 0.203125)
 texture = ExtResource("2_qca1a")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="input_event" from="." to="." method="_on_input_event"]
+[node name="MouseArea2D" type="Area2D" parent="." unique_id=127795579]
+unique_name_in_owner = true
+z_as_relative = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MouseArea2D" unique_id=1193703021]
+shape = SubResource("CircleShape2D_gx3r7")
+
+[connection signal="input_event" from="MouseArea2D" to="." method="_on_mouse_area_2d_input_event"]

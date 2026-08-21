@@ -1,7 +1,8 @@
 class_name BrainZone
 extends Area2D
 
-@onready var floating_score_label: FloatingScoreLabel = %FloatingScoreLabel
+@onready var floating_score_label: FloatingScoreLabel = $FloatingScoreLabel
+
 
 var energy = 100
 var connected_nodes = []
@@ -31,13 +32,13 @@ func calc_engery(engery_from_task:int):
 
 func float_points(points:int, sign:String):
 	floating_score_label.add_floating_label(sign + str(points))
-	floating_score_label.text = str(energy)
+	#floating_score_label.text = str(energy)
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Electrode) -> void:
 	#print(self, "entered")
 	connected_nodes.append(area)
 
 
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(area: Electrode) -> void:
 	#print(self, "exited")
 	connected_nodes.erase(area)
