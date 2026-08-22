@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://8o08tf8mnoc7"]
+
+[ext_resource type="Script" uid="uid://wt5e3vc414mk" path="res://seb_test/brain_zone.gd" id="1_sr5a5"]
+
+[node name="BrainZone" type="Area2D" unique_id=3999878]
+script = ExtResource("1_sr5a5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

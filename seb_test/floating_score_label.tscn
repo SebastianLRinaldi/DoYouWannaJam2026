@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3xggxi4t0i6n"]
+
+[ext_resource type="Script" uid="uid://3uvb1koaqj4g" path="res://seb_test/floating_score_label.gd" id="1_3pkof"]
+
+[node name="FloatingScoreLabel" type="Marker2D" unique_id=168567885]
+script = ExtResource("1_3pkof")
