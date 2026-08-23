@@ -3,12 +3,28 @@
 [ext_resource type="Script" uid="uid://bddiovt5dviku" path="res://seb_test/electrode.gd" id="1_5y8qt"]
 [ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="2_pst50"]
 [ext_resource type="Texture2D" uid="uid://ba55qhii5yr0v" path="res://assets/Bandage.png" id="3_pst50"]
+[ext_resource type="Texture2D" uid="uid://b3wigs2w2utw2" path="res://assets/Bandage_used.png" id="4_ppkgs"]
+[ext_resource type="Texture2D" uid="uid://cia4xhv2jk1t" path="res://assets/Bandage_infected.png" id="5_btvi2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pst50"]
 radius = 1.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8v81"]
-atlas = ExtResource("3_pst50")
+[sub_resource type="SpriteFrames" id="SpriteFrames_qca1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pst50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ppkgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_btvi2")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pst50"]
 size = Vector2(30, 20)
@@ -21,11 +37,13 @@ shape = SubResource("CircleShape2D_pst50")
 
 [node name="FloatingScoreLabel" parent="." unique_id=2029776562 instance=ExtResource("2_pst50")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=522057051]
+[node name="BandageSprite" type="AnimatedSprite2D" parent="." unique_id=1916427875]
+unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.7294118)
-position = Vector2(1, 6.999999)
+position = Vector2(1, 6.9999995)
 scale = Vector2(0.8886719, 0.8886718)
-texture = SubResource("AtlasTexture_l8v81")
+sprite_frames = SubResource("SpriteFrames_qca1a")
+frame_progress = 0.7336566
 
 [node name="MouseArea2D" type="Area2D" parent="." unique_id=127795579]
 unique_name_in_owner = true
@@ -34,4 +52,9 @@ z_as_relative = false
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MouseArea2D" unique_id=1193703021]
 shape = SubResource("RectangleShape2D_pst50")
 
+[node name="UsageTimer" type="Timer" parent="." unique_id=1664139940]
+unique_name_in_owner = true
+wait_time = 6.0
+
 [connection signal="input_event" from="MouseArea2D" to="." method="_on_mouse_area_2d_input_event"]
+[connection signal="timeout" from="UsageTimer" to="." method="_on_usage_timer_timeout"]
