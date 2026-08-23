@@ -6,10 +6,13 @@ extends Area2D
 const SPAWN_CURVE = preload("uid://co4qvjv0wuqx4")
 
 @onready var mouse_area_2d: Area2D = %MouseArea2D
+@onready var bandage_sprite: AnimatedSprite2D = %BandageSprite
+@onready var usage_timer: Timer = %UsageTimer
 
 var selected = false
 var mouse_offset = Vector2(0, 0)
 
+var bandage_use_count = 0
 
 func _ready() -> void:
 	pass
@@ -37,3 +40,11 @@ func _on_mouse_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx:
 		selected = false
 	
 	get_viewport().set_input_as_handled()
+
+func start_healing():
+	usage_timer.start()
+
+
+func _on_usage_timer_timeout() -> void:
+	bandage_use_count += 1
+	bandage_sprite.frame = bandage_use_count
