@@ -42,6 +42,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_gx3r7"]
+offsets = PackedFloat32Array(0.07079646, 0.7920354, 1)
+colors = PackedColorArray(0.5398627, 8.663535e-07, 1.92523e-07, 1, 1, 0.39018378, 0.51553327, 1, 1, 1, 1, 0)
+
 [node name="WoundGash1" type="Area2D" unique_id=3999878]
 scale = Vector2(1.0130639, 1.0178561)
 script = ExtResource("1_tk38t")
@@ -59,6 +63,17 @@ animation = &"wound_gash_1"
 [node name="FloatingScoreLabel" parent="WoundSprite" unique_id=168567885 instance=ExtResource("3_6hwby")]
 unique_name_in_owner = true
 position = Vector2(-0.49019557, 2.5166406e-07)
+
+[node name="BloodEmiter" type="CPUParticles2D" parent="." unique_id=314511641]
+unique_name_in_owner = true
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 4.85
+gravity = Vector2(0, 10)
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(1, 0.17710057, 0.34337336, 1)
+color_ramp = SubResource("Gradient_gx3r7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

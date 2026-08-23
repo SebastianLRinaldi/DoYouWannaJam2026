@@ -3,6 +3,7 @@ extends Area2D
 
 @onready var floating_score_label: FloatingScoreLabel = %FloatingScoreLabel
 @onready var wound_sprite: AnimatedSprite2D = %WoundSprite
+@onready var blood_emiter: CPUParticles2D = %BloodEmiter
 
 @export var blood_loss_rate = 2
 
@@ -15,9 +16,11 @@ var loss_reduced = 0
 var fully_healed = false
 var infected_wound = false
 
-
+func _ready() -> void:
+	blood_emiter.emitting = true
 
 func calc_current_loss():
+	if bandage_attached_to_wound: return
 	var energy_draw = blood_loss_rate - loss_reduced
 	if energy_draw > 0:
 		float_points(energy_draw, "-")
@@ -40,6 +43,7 @@ func _on_area_entered(area: Electrode) -> void:
 	area.start_healing()
 	area.completed.connect(on_bandage_completed)
 	area.bandage_infected.connect(on_bandage_infected)
+	blood_emiter.emitting = false
 
 
 func _on_area_exited(area: Electrode) -> void:
@@ -48,6 +52,8 @@ func _on_area_exited(area: Electrode) -> void:
 	area.completed.disconnect(on_bandage_completed)
 	area.bandage_infected.disconnect(on_bandage_infected)
 	area.stop_healing()
+	if not fully_healed:
+		blood_emiter.emitting = true
 
 func stop_healing_wound():
 	bandage_attached_to_wound.completed.disconnect(on_bandage_completed)
@@ -58,8 +64,11 @@ func stop_healing_wound():
 func on_bandage_completed():
 	if infected_wound:
 		infected_wound = false
-	heal_count += 1
-	loss_reduced += 1
+		loss_reduced += 1
+		heal_count = 0
+	else:
+		heal_count += 1
+		loss_reduced += 1
 	wound_sprite.frame = heal_count
 	
 	if heal_count == 2:
@@ -69,6 +78,5 @@ func on_bandage_infected():
 	infected_wound = true
 	fully_healed = false
 	wound_sprite.frame = 3
-	heal_count = 0
-	loss_reduced = 0
+	loss_reduced = -1
 	stop_healing_wound()
