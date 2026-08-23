@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="4_u5xtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i52uw"]
-size = Vector2(11, 131)
+size = Vector2(14.5, 131)
 
 [node name="TestRoot" type="Node2D" unique_id=1282574010]
 script = ExtResource("1_qnkri")
@@ -32,14 +32,14 @@ vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=60641299]
 position = Vector2(-279, -85)
-scale = Vector2(0.03125, 1)
+scale = Vector2(0.109374985, 1)
 texture = ExtResource("4_i52uw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1474021829]
 position = Vector2(-119, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1266491738]
-position = Vector2(-162, -112)
+position = Vector2(-160.25, -112)
 shape = SubResource("RectangleShape2D_i52uw")
 
 [node name="WoundsContainer" type="Node2D" parent="." unique_id=1170791219]
@@ -73,11 +73,11 @@ autostart = true
 
 [node name="Label" type="Label" parent="." unique_id=1538743420]
 offset_left = -314.0
-offset_top = 1.0
-offset_right = -191.0
-offset_bottom = 43.0
-theme_override_font_sizes/font_size = 8
-text = "Slowing Glide the bandage over the table edge to unstick from your finger"
+offset_top = -14.0
+offset_right = -221.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 7
+text = "Slowing Glide bandage on table edge to unstick from finger"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
