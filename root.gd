@@ -1,5 +1,7 @@
 extends Node2D
-@export var zones: Array[BrainZone]
+
+@onready var wounds_container: Node2D = %WoundsContainer
+
 
 @onready var total_score: ScoreLabel = %TotalScore
 
@@ -14,6 +16,8 @@ const SPAWN_CURVE = preload("uid://co4qvjv0wuqx4")
 @onready var fl_score_6: ScoreLabel = %FLScore6
 
 @onready var eletrode_container: Node2D = %EletrodeContainer
+
+var wounds = []
 
 const ELECTRODE = preload("uid://bx35ptbx7ue23")
 
@@ -32,27 +36,36 @@ var config = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	wounds = wounds_container.get_children()
+	print(wounds)
 
 
 func set_engery_by_level(level_key:int):
 	var energy_amounts = config[level_key]
-	for zone_idx in zones.size():
-		zones[zone_idx].calc_engery(energy_amounts[zone_idx])
+	for zone_idx in wounds.size():
+		wounds[zone_idx].calc_engery(energy_amounts[zone_idx])
 
 
 func _on_timer_timeout() -> void:
 	set_engery_by_level(3)
 	
-	fl_score.update_score("B1", zones[0].energy)
-	fl_score_2.update_score("B2", zones[1].energy)
-	fl_score_3.update_score("B3", zones[2].energy)
-	fl_score_4.update_score("B4", zones[3].energy)
-	fl_score_5.update_score("B5", zones[4].energy)
-	fl_score_6.update_score("B6", zones[5].energy)
+	var wound_idx = 0
+	for wound in wounds:
+		var wound_name = "Wound" + str(wound_idx) + ": "
+		fl_score.update_score(wound_name, wound.energy)
+		wound_idx += 1
+
+	
+	
+	#fl_score.update_score("B1", wounds[0].energy)
+	#fl_score_2.update_score("B2", wounds[1].energy)
+	#fl_score_3.update_score("B3", wounds[2].energy)
+	#fl_score_4.update_score("B4", wounds[3].energy)
+	#fl_score_5.update_score("B5", wounds[4].energy)
+	#fl_score_6.update_score("B6", wounds[5].energy)
 	
 	var total = 0 
-	for zone in zones:
+	for zone in wounds:
 		total += zone.energy
 	total_score.update_score("TS", total)
 

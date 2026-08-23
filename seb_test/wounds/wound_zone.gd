@@ -1,7 +1,7 @@
-class_name BrainZone
+class_name WoundZone
 extends Area2D
 
-@onready var floating_score_label: FloatingScoreLabel = $FloatingScoreLabel
+@onready var floating_score_label: FloatingScoreLabel = %FloatingScoreLabel
 
 
 var energy = 100
