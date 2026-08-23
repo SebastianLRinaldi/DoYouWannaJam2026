@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://b7wv4lwqslq3e"]
 
-[ext_resource type="Script" uid="uid://wt5e3vc414mk" path="res://seb_test/wounds/wound_zone.gd" id="1_es14w"]
-[ext_resource type="Texture2D" uid="uid://sese18ol0vfc" path="res://assets/Gashes.png" id="2_i0q2t"]
+[ext_resource type="Script" uid="uid://d3pjocmymoa5h" path="res://seb_test/wounds/wound_zone.gd" id="1_es14w"]
+[ext_resource type="Texture2D" uid="uid://qqe046lyqe6r" path="res://assets/Wounds (1).png" id="2_i0q2t"]
 [ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="3_he083"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqw2b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijlhx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwwrv"]
 atlas = ExtResource("2_i0q2t")
-region = Rect2(0.7039757, 33.888805, 13.309547, 30.39613)
+region = Rect2(72, 74, 50, 38.5)
 
 [node name="WoundHole" type="Area2D" unique_id=3999878]
 script = ExtResource("1_es14w")
@@ -17,12 +17,13 @@ script = ExtResource("1_es14w")
 shape = SubResource("CircleShape2D_sqw2b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005826290]
-position = Vector2(0, 1)
-scale = Vector2(0.951923, 0.7)
-texture = SubResource("AtlasTexture_ijlhx")
+position = Vector2(2.0000002, -1)
+scale = Vector2(0.615, 0.57894737)
+texture = SubResource("AtlasTexture_iwwrv")
 
 [node name="FloatingScoreLabel" parent="Sprite2D" unique_id=168567885 instance=ExtResource("3_he083")]
 unique_name_in_owner = true
+position = Vector2(-0.49019557, 2.5166406e-07)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
