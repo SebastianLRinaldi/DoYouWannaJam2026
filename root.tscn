@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://chadviptwb3hu"]
 
-[ext_resource type="Script" uid="uid://c1bj2pb7fxvgj" path="res://root.gd" id="1_jnlp7"]
+[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="2_pyidc"]
 [ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_vvh5c"]
 [ext_resource type="Texture2D" uid="uid://dpuhph2u7j2qp" path="res://assets/First_Aid_Kit_Closed.png" id="4_28aoi"]
 [ext_resource type="PackedScene" uid="uid://cd7wnykjqodys" path="res://seb_test/wounds/wound_hole.tscn" id="4_l8v81"]
 [ext_resource type="Texture2D" uid="uid://c370cutu1k7nl" path="res://assets/First_Aid_Kit_Open.png" id="5_jnlp7"]
+[ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="5_tw3kd"]
+[ext_resource type="PackedScene" uid="uid://b7wv4lwqslq3e" path="res://seb_test/wounds/wound_Gash_2.tscn" id="6_gd4vy"]
+[ext_resource type="PackedScene" uid="uid://d4ny3qvkqx0lo" path="res://seb_test/wounds/wound_Gash_3.tscn" id="7_qw60f"]
+[ext_resource type="PackedScene" uid="uid://cg5u0iug23dl6" path="res://seb_test/wounds/wound_hole_2.tscn" id="8_eji0w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vvh5c"]
 animations = [{
@@ -118,6 +122,21 @@ unique_name_in_owner = true
 
 [node name="WoundHole" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("4_l8v81")]
 position = Vector2(333, 46)
+
+[node name="WoundHole2" parent="WoundsContainer" unique_id=1613889025 instance=ExtResource("5_tw3kd")]
+position = Vector2(511, 171)
+
+[node name="WoundHole3" parent="WoundsContainer" unique_id=1406190438 instance=ExtResource("6_gd4vy")]
+position = Vector2(331, 257)
+
+[node name="WoundHole4" parent="WoundsContainer" unique_id=1622355202 instance=ExtResource("7_qw60f")]
+position = Vector2(420, 114)
+
+[node name="WoundHole5" parent="WoundsContainer" unique_id=1819593514 instance=ExtResource("8_eji0w")]
+position = Vector2(502, 100)
+
+[node name="WoundHole6" parent="WoundsContainer" unique_id=544697074 instance=ExtResource("8_eji0w")]
+position = Vector2(479, 265)
 
 [node name="EletrodeContainer" type="Node2D" parent="." unique_id=594074508]
 unique_name_in_owner = true

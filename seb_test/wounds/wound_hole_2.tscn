@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cg5u0iug23dl6"]
+
+[ext_resource type="Script" uid="uid://d3pjocmymoa5h" path="res://seb_test/wounds/wound_zone.gd" id="1_rpxa5"]
+[ext_resource type="Texture2D" uid="uid://bbju31yy6c58e" path="res://assets/bullet_wounds.png" id="2_ow82o"]
+[ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="3_fpynh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqw2b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwwrv"]
+atlas = ExtResource("2_ow82o")
+region = Rect2(44.547005, 37.165733, 10, 15)
+
+[node name="WoundHole" type="Area2D" unique_id=3999878]
+script = ExtResource("1_rpxa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766022042]
+shape = SubResource("CircleShape2D_sqw2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005826290]
+texture = SubResource("AtlasTexture_iwwrv")
+
+[node name="FloatingScoreLabel" parent="Sprite2D" unique_id=168567885 instance=ExtResource("3_fpynh")]
+unique_name_in_owner = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
