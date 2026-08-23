@@ -6,22 +6,57 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqw2b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwwrv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aome"]
 atlas = ExtResource("2_tk38t")
-region = Rect2(73, 11, 50, 38.5)
+region = Rect2(64, 0, 64, 64)
 
-[node name="WoundHole" type="Area2D" unique_id=3999878]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hwby"]
+atlas = ExtResource("2_tk38t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijlhx"]
+atlas = ExtResource("2_tk38t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk38t"]
+atlas = ExtResource("2_tk38t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0nbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aome")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hwby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijlhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk38t")
+}],
+"loop": 1,
+"name": &"wound_gash_1",
+"speed": 5.0
+}]
+
+[node name="WoundGash1" type="Area2D" unique_id=3999878]
+scale = Vector2(1.0130639, 1.0178561)
 script = ExtResource("1_tk38t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766022042]
 shape = SubResource("CircleShape2D_sqw2b")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005826290]
-position = Vector2(-1.1920929e-07, 0)
-scale = Vector2(0.51000005, 0.4736842)
-texture = SubResource("AtlasTexture_iwwrv")
+[node name="WoundSprite" type="AnimatedSprite2D" parent="." unique_id=1690926927]
+unique_name_in_owner = true
+position = Vector2(-1, 1.9999999)
+scale = Vector2(0.45312503, 0.40624997)
+sprite_frames = SubResource("SpriteFrames_u0nbm")
+animation = &"wound_gash_1"
 
-[node name="FloatingScoreLabel" parent="Sprite2D" unique_id=168567885 instance=ExtResource("3_6hwby")]
+[node name="FloatingScoreLabel" parent="WoundSprite" unique_id=168567885 instance=ExtResource("3_6hwby")]
 unique_name_in_owner = true
 position = Vector2(-0.49019557, 2.5166406e-07)
 

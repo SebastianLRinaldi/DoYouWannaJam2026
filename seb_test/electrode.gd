@@ -12,16 +12,22 @@ const SPAWN_CURVE = preload("uid://co4qvjv0wuqx4")
 var selected = false
 var mouse_offset = Vector2(0, 0)
 
+signal completed
+signal bandage_infected
+
 var bandage_use_count = 0
 
 func _ready() -> void:
-	pass
+	GlobalManager.unstick_bandage.connect(_on_unstick_bandage)
 
 
 func _process(delta):
 	if selected:
 		followMouse()
 
+
+func _on_unstick_bandage():
+	selected = false
 
 func followMouse():
 	position = get_global_mouse_position() + mouse_offset
@@ -45,6 +51,13 @@ func start_healing():
 	usage_timer.start()
 
 
+func stop_healing():
+	usage_timer.stop()
+
+
 func _on_usage_timer_timeout() -> void:
 	bandage_use_count += 1
 	bandage_sprite.frame = bandage_use_count
+	completed.emit()
+	if bandage_use_count >= 2:
+		bandage_infected.emit()
