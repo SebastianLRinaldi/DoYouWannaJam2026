@@ -1,24 +1,41 @@
 [gd_scene format=3 uid="uid://chadviptwb3hu"]
 
 [ext_resource type="Script" uid="uid://c1bj2pb7fxvgj" path="res://root.gd" id="1_jnlp7"]
-[ext_resource type="Texture2D" uid="uid://b8npn0b68pipu" path="res://brain_temp.png" id="1_vvh5c"]
 [ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="2_pyidc"]
-[ext_resource type="PackedScene" uid="uid://8o08tf8mnoc7" path="res://seb_test/brain_zone.tscn" id="4_jnlp7"]
-[ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="5_jnlp7"]
+[ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_vvh5c"]
+[ext_resource type="Texture2D" uid="uid://dpuhph2u7j2qp" path="res://assets/First_Aid_Kit_Closed.png" id="4_28aoi"]
+[ext_resource type="PackedScene" uid="uid://cd7wnykjqodys" path="res://seb_test/wounds/wound_hole.tscn" id="4_l8v81"]
+[ext_resource type="Texture2D" uid="uid://c370cutu1k7nl" path="res://assets/First_Aid_Kit_Open.png" id="5_jnlp7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jnlp7"]
-atlas = ExtResource("1_vvh5c")
-region = Rect2(288.3191, 99.07451, 396.82977, 331.28192)
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvh5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_28aoi")
+}],
+"loop": 1,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jnlp7")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}]
 
-[node name="Root" type="Node2D" unique_id=1361942033 node_paths=PackedStringArray("zones")]
+[sub_resource type="Animation" id="Animation_28aoi"]
+resource_name = "open_then_close"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnlp7"]
+_data = {
+&"open_then_close": SubResource("Animation_28aoi")
+}
+
+[node name="Root" type="Node2D" unique_id=1361942033]
 script = ExtResource("1_jnlp7")
-zones = [NodePath("BrainZone"), NodePath("BrainZone2"), NodePath("BrainZone3"), NodePath("BrainZone4"), NodePath("BrainZone5"), NodePath("BrainZone6")]
-
-[node name="BrainTemp" type="Sprite2D" parent="." unique_id=922941903]
-position = Vector2(363, 160)
-scale = Vector2(0.95742476, 0.96052337)
-texture = SubResource("AtlasTexture_jnlp7")
-metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1658836464]
 offset_left = 49.0
@@ -91,77 +108,43 @@ fit_content = true
 autowrap_mode = 0
 vertical_alignment = 1
 
+[node name="Torso" type="Sprite2D" parent="." unique_id=307020280]
+position = Vector2(420, 156)
+scale = Vector2(4.4453115, 4.4453115)
+texture = ExtResource("2_vvh5c")
+
+[node name="WoundsContainer" type="Node2D" parent="." unique_id=1688533613]
+unique_name_in_owner = true
+
+[node name="WoundHole" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("4_l8v81")]
+position = Vector2(333, 46)
+
+[node name="EletrodeContainer" type="Node2D" parent="." unique_id=594074508]
+unique_name_in_owner = true
+position = Vector2(28, 237)
+
+[node name="ColorRect" type="AnimatedSprite2D" parent="EletrodeContainer" unique_id=455077187]
+position = Vector2(62, 38)
+scale = Vector2(2.21875, 2.21875)
+sprite_frames = SubResource("SpriteFrames_vvh5c")
+animation = &"close"
+
+[node name="SpawnBandaidButton" type="Button" parent="EletrodeContainer" unique_id=1051780655]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 116.0
+offset_bottom = 36.0
+text = "new bandaid"
+
 [node name="Timer" type="Timer" parent="." unique_id=857581948]
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=129266971]
 position = Vector2(320, 160)
 
-[node name="EletrodeContainer" type="Node2D" parent="." unique_id=594074508]
-unique_name_in_owner = true
-position = Vector2(28, 237)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1776821148]
+libraries/ = SubResource("AnimationLibrary_jnlp7")
 
-[node name="ColorRect" type="ColorRect" parent="EletrodeContainer" unique_id=2001571162]
-offset_right = 130.0
-offset_bottom = 130.0
-mouse_filter = 2
-
-[node name="SpawnBandaidButton" type="Button" parent="EletrodeContainer/ColorRect" unique_id=1051780655]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 9.0
-offset_top = 15.0
-offset_right = 117.0
-offset_bottom = 46.0
-text = "new bandaid"
-
-[node name="BrainZone" parent="." unique_id=3999878 instance=ExtResource("4_jnlp7")]
-
-[node name="FloatingScoreLabel" parent="BrainZone" unique_id=168567885 instance=ExtResource("5_jnlp7")]
-position = Vector2(264, 79)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone" unique_id=1533514274]
-polygon = PackedVector2Array(342, 82, 344, 61, 354, 48, 370, 34, 392, 25, 403, 20, 384, 16, 350, 17, 328, 14, 268, 21, 225, 49, 203, 74, 194, 103, 191, 137, 204, 156, 226, 169, 261, 157, 283, 173, 305, 168, 323, 150, 346, 142, 353, 123, 343, 101)
-
-[node name="BrainZone2" parent="." unique_id=1432211447 instance=ExtResource("4_jnlp7")]
-
-[node name="FloatingScoreLabel" parent="BrainZone2" unique_id=82999669 instance=ExtResource("5_jnlp7")]
-position = Vector2(417, 32)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone2" unique_id=892175859]
-polygon = PackedVector2Array(361, 139, 360, 123, 356, 110, 351, 100, 350, 82, 360, 55, 382, 37, 402, 29, 426, 23, 452, 35, 469, 47, 480, 58, 496, 63, 503, 81, 514, 94, 523, 104, 523, 117, 513, 128, 500, 124, 489, 111, 491, 89, 473, 71, 465, 59, 448, 50, 425, 54, 410, 47, 383, 50, 373, 60, 366, 73, 363, 87, 369, 105, 375, 116, 376, 128, 370, 135)
-
-[node name="BrainZone3" parent="." unique_id=1264638005 instance=ExtResource("4_jnlp7")]
-
-[node name="FloatingScoreLabel" parent="BrainZone3" unique_id=350827634 instance=ExtResource("5_jnlp7")]
-position = Vector2(416, 128)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone3" unique_id=904604151]
-polygon = PackedVector2Array(389, 60, 403, 55, 419, 65, 443, 57, 463, 73, 478, 89, 480, 111, 490, 126, 489, 141, 481, 150, 462, 159, 457, 173, 456, 192, 458, 207, 448, 212, 434, 220, 417, 218, 410, 228, 396, 228, 384, 238, 366, 240, 361, 248, 346, 251, 333, 240, 318, 242, 308, 228, 297, 219, 293, 205, 298, 194, 308, 176, 318, 169, 329, 162, 340, 157, 353, 155, 361, 148, 373, 149, 381, 134, 385, 111, 376, 102, 372, 84, 374, 73, 380, 67)
-
-[node name="BrainZone4" parent="." unique_id=628636662 instance=ExtResource("4_jnlp7")]
-
-[node name="FloatingScoreLabel" parent="BrainZone4" unique_id=690667430 instance=ExtResource("5_jnlp7")]
-position = Vector2(512, 148)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone4" unique_id=1208704948]
-polygon = PackedVector2Array(502, 135, 517, 135, 523, 129, 535, 138, 537, 149, 535, 159, 539, 169, 542, 181, 539, 189, 543, 197, 542, 208, 536, 220, 525, 226, 511, 226, 501, 217, 489, 218, 476, 213, 468, 204, 465, 194, 466, 181, 468, 170, 476, 161, 486, 158, 494, 152, 499, 144)
-
-[node name="BrainZone5" parent="." unique_id=563041018 instance=ExtResource("4_jnlp7")]
-
-[node name="FloatingScoreLabel" parent="BrainZone5" unique_id=638343944 instance=ExtResource("5_jnlp7")]
-position = Vector2(460, 234)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone5" unique_id=1828832147]
-polygon = PackedVector2Array(465, 213, 455, 222, 442, 225, 432, 234, 423, 247, 421, 260, 423, 270, 434, 276, 451, 279, 467, 276, 481, 270, 490, 263, 500, 252, 506, 240, 506, 232, 498, 225, 484, 226, 471, 223)
-
-[node name="BrainZone6" parent="." unique_id=1346384142 instance=ExtResource("4_jnlp7")]
-
-[node name="FloatingScoreLabel" parent="BrainZone6" unique_id=185703607 instance=ExtResource("5_jnlp7")]
-position = Vector2(405, 257)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BrainZone6" unique_id=589757669]
-polygon = PackedVector2Array(426, 228, 420, 235, 414, 245, 411, 257, 413, 267, 422, 279, 435, 283, 443, 286, 447, 298, 452, 310, 442, 313, 432, 311, 424, 301, 416, 289, 409, 272, 405, 264, 397, 260, 390, 251, 386, 244, 397, 237, 407, 237, 417, 233, 423, 227)
-
+[connection signal="pressed" from="EletrodeContainer/SpawnBandaidButton" to="." method="_on_spawn_bandaid_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="EletrodeContainer/ColorRect/SpawnBandaidButton" to="." method="_on_spawn_bandaid_button_pressed"]
