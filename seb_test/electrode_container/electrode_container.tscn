@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bl4vv5moxr5xj"]
+
+[ext_resource type="Texture2D" uid="uid://dpuhph2u7j2qp" path="res://assets/First_Aid_Kit_Closed.png" id="1_hq15g"]
+[ext_resource type="Script" uid="uid://desibb3tdb2vg" path="res://seb_test/electrode_container/electrode_container.gd" id="1_tr0vy"]
+[ext_resource type="Texture2D" uid="uid://c370cutu1k7nl" path="res://assets/First_Aid_Kit_Open.png" id="2_xkcuq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvh5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hq15g")
+}],
+"loop": 1,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xkcuq")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="EletrodeContainer" type="Node2D" unique_id=436850603]
+script = ExtResource("1_tr0vy")
+
+[node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=1035915721]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(2.21875, 2.21875)
+sprite_frames = SubResource("SpriteFrames_vvh5c")
+animation = &"close"
+
+[node name="SpawnBandaidButton" type="Button" parent="." unique_id=1920424121]
+unique_name_in_owner = true
+offset_left = -53.0
+offset_top = -17.0
+offset_right = 55.0
+offset_bottom = 14.0
+text = "new bandaid"
+
+[connection signal="pressed" from="SpawnBandaidButton" to="." method="_on_spawn_bandaid_button_pressed"]

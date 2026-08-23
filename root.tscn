@@ -3,28 +3,8 @@
 [ext_resource type="Script" uid="uid://c1bj2pb7fxvgj" path="res://root.gd" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="2_pyidc"]
 [ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_vvh5c"]
-[ext_resource type="Texture2D" uid="uid://dpuhph2u7j2qp" path="res://assets/First_Aid_Kit_Closed.png" id="4_28aoi"]
 [ext_resource type="PackedScene" uid="uid://cd7wnykjqodys" path="res://seb_test/wounds/wound_hole.tscn" id="4_l8v81"]
-[ext_resource type="Texture2D" uid="uid://c370cutu1k7nl" path="res://assets/First_Aid_Kit_Open.png" id="5_jnlp7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vvh5c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_28aoi")
-}],
-"loop": 1,
-"name": &"close",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_jnlp7")
-}],
-"loop": 1,
-"name": &"open",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="5_jnlp7"]
 
 [sub_resource type="Animation" id="Animation_28aoi"]
 resource_name = "open_then_close"
@@ -56,6 +36,7 @@ vertical_alignment = 1
 
 [node name="FLScore" parent="VBoxContainer" unique_id=1435402187 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 text = "Score: XXX"
@@ -65,6 +46,7 @@ vertical_alignment = 1
 
 [node name="FLScore2" parent="VBoxContainer" unique_id=1206257340 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 text = "Score: XXX"
@@ -74,6 +56,7 @@ vertical_alignment = 1
 
 [node name="FLScore3" parent="VBoxContainer" unique_id=988155399 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 text = "Score: XXX"
@@ -83,6 +66,7 @@ vertical_alignment = 1
 
 [node name="FLScore4" parent="VBoxContainer" unique_id=626233664 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 text = "Score: XXX"
@@ -92,6 +76,7 @@ vertical_alignment = 1
 
 [node name="FLScore5" parent="VBoxContainer" unique_id=1278262425 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 text = "Score: XXX"
@@ -101,6 +86,7 @@ vertical_alignment = 1
 
 [node name="FLScore6" parent="VBoxContainer" unique_id=2073635822 instance=ExtResource("2_pyidc")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 text = "Score: XXX"
@@ -116,26 +102,26 @@ texture = ExtResource("2_vvh5c")
 [node name="WoundsContainer" type="Node2D" parent="." unique_id=1688533613]
 unique_name_in_owner = true
 
-[node name="WoundHole" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("4_l8v81")]
+[node name="WoundHole" parent="WoundsContainer" unique_id=978761254 instance=ExtResource("4_l8v81")]
 position = Vector2(333, 46)
 
-[node name="EletrodeContainer" type="Node2D" parent="." unique_id=594074508]
-unique_name_in_owner = true
-position = Vector2(28, 237)
+[node name="WoundHole2" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("4_l8v81")]
+position = Vector2(328, 145)
 
-[node name="ColorRect" type="AnimatedSprite2D" parent="EletrodeContainer" unique_id=455077187]
-position = Vector2(62, 38)
-scale = Vector2(2.21875, 2.21875)
-sprite_frames = SubResource("SpriteFrames_vvh5c")
-animation = &"close"
+[node name="WoundHole3" parent="WoundsContainer" unique_id=1840108309 instance=ExtResource("4_l8v81")]
+position = Vector2(460, 55)
 
-[node name="SpawnBandaidButton" type="Button" parent="EletrodeContainer" unique_id=1051780655]
-unique_name_in_owner = true
-offset_left = 8.0
-offset_top = 5.0
-offset_right = 116.0
-offset_bottom = 36.0
-text = "new bandaid"
+[node name="WoundHole4" parent="WoundsContainer" unique_id=378047897 instance=ExtResource("4_l8v81")]
+position = Vector2(453, 212)
+
+[node name="WoundHole5" parent="WoundsContainer" unique_id=196180540 instance=ExtResource("4_l8v81")]
+position = Vector2(371, 261)
+
+[node name="WoundHole6" parent="WoundsContainer" unique_id=1652152896 instance=ExtResource("4_l8v81")]
+position = Vector2(436, 148)
+
+[node name="EletrodeContainer" parent="." unique_id=436850603 instance=ExtResource("5_jnlp7")]
+position = Vector2(98, 229)
 
 [node name="Timer" type="Timer" parent="." unique_id=857581948]
 autostart = true
@@ -146,5 +132,4 @@ position = Vector2(320, 160)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1776821148]
 libraries/ = SubResource("AnimationLibrary_jnlp7")
 
-[connection signal="pressed" from="EletrodeContainer/SpawnBandaidButton" to="." method="_on_spawn_bandaid_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
