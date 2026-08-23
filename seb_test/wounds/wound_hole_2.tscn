@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cg5u0iug23dl6"]
 
-[ext_resource type="Script" uid="uid://d3pjocmymoa5h" path="res://seb_test/wounds/wound_zone.gd" id="1_rpxa5"]
+[ext_resource type="Script" uid="uid://wt5e3vc414mk" path="res://seb_test/wounds/wound_zone.gd" id="1_rpxa5"]
 [ext_resource type="Texture2D" uid="uid://bbju31yy6c58e" path="res://assets/bullet_wounds.png" id="2_ow82o"]
 [ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="3_fpynh"]
 
