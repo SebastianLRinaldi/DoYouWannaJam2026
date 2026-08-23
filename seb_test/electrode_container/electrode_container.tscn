@@ -40,4 +40,7 @@ offset_right = 55.0
 offset_bottom = 14.0
 text = "new bandaid"
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=244246814]
+position = Vector2(0, -116)
+
 [connection signal="pressed" from="SpawnBandaidButton" to="." method="_on_spawn_bandaid_button_pressed"]
