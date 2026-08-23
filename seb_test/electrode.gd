@@ -13,24 +13,6 @@ var mouse_offset = Vector2(0, 0)
 
 func _ready() -> void:
 	pass
-	
-	#var tween = create_tween()
-	##tween.set_parallel(true)
-	##audio_stream_player_2d.stream = move_sfx.pick_random()
-	##tween.tween_callback(audio_stream_player_2d.play)
-	#var start = position
-	#var ran_x_range = randf_range(0, 130)
-	#var end = start + Vector2(ran_x_range, -SPAWN_CURVE.sample(ran_x_range))
-	#tween.tween_property(self, "position", end, 0.5)
-	##tween.set_trans(Tween.TRANS_QUAD)
-	##tween.set_ease(Tween.EASE_OUT)
-	#
-	#tween.tween_property(self,"scale",Vector2(0.5,1.5),0.05)
-	#tween.tween_property(self,"scale",Vector2(1.5,0.5),0.05)
-	#tween.tween_property(self,"scale",Vector2(1,1),0.05)
-	##tween.tween_interval(0.35) # Wait for half a second
-	#await tween.finished
-	##moving = false
 
 
 func _process(delta):
@@ -47,9 +29,11 @@ func give_points(points:int):
 
 
 func _on_mouse_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			mouse_offset = position - get_global_mouse_position()
-			selected = true
-		else:
-			selected = false
+	if event.is_action_pressed("left_click"):
+		mouse_offset = position - get_global_mouse_position()
+		selected = true
+		
+	elif event.is_action_released("left_click"):
+		selected = false
+	
+	get_viewport().set_input_as_handled()

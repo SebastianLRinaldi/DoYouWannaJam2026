@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://chadviptwb3hu"]
+[gd_scene format=3 uid="uid://cgxdqyck1qptv"]
 
 [ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="2_pyidc"]
@@ -10,100 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="7_gd4vy"]
 [ext_resource type="PackedScene" uid="uid://d4ny3qvkqx0lo" path="res://seb_test/wounds/wound_Gash_3.tscn" id="8_qw60f"]
 
-[sub_resource type="Animation" id="Animation_28aoi"]
-resource_name = "open_then_close"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnlp7"]
-_data = {
-&"open_then_close": SubResource("Animation_28aoi")
-}
-
-[node name="Root" type="Node2D" unique_id=1361942033]
+[node name="Root" type="Node2D" unique_id=124813217]
 script = ExtResource("1_jnlp7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1658836464]
-offset_left = 49.0
-offset_top = 2.0
-offset_right = 131.0
-offset_bottom = 187.0
-mouse_filter = 2
-alignment = 1
-
-[node name="TotalScore" parent="VBoxContainer" unique_id=676694139 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="FLScore" parent="VBoxContainer" unique_id=1435402187 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="FLScore2" parent="VBoxContainer" unique_id=1206257340 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="FLScore3" parent="VBoxContainer" unique_id=988155399 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="FLScore4" parent="VBoxContainer" unique_id=626233664 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="FLScore5" parent="VBoxContainer" unique_id=1278262425 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="FLScore6" parent="VBoxContainer" unique_id=2073635822 instance=ExtResource("2_pyidc")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 2
-text = "Score: XXX"
-fit_content = true
-autowrap_mode = 0
-vertical_alignment = 1
-
-[node name="Torso" type="Sprite2D" parent="." unique_id=307020280]
-position = Vector2(420, 156)
-scale = Vector2(4.4453115, 4.4453115)
+[node name="Torso" type="Sprite2D" parent="." unique_id=1277673301]
+position = Vector2(165.00006, 2.0000153)
+scale = Vector2(4.617187, 4.617187)
 texture = ExtResource("2_vvh5c")
 
-[node name="WoundsContainer" type="Node2D" parent="." unique_id=1688533613]
+[node name="WoundsContainer" type="Node2D" parent="." unique_id=1870666612]
 unique_name_in_owner = true
 
 [node name="WoundHole" parent="WoundsContainer" unique_id=978761254 instance=ExtResource("4_l8v81")]
@@ -136,4 +51,4 @@ position = Vector2(320, 160)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1776821148]
 libraries/ = SubResource("AnimationLibrary_jnlp7")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1788005143]
