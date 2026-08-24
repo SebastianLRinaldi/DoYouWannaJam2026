@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c03ab4ns23k3"]
 
-[ext_resource type="Script" uid="uid://bgay33yfh7mdn" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Script" uid="uid://ynodvw608s30" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="2_t6bnd"]
 [ext_resource type="Texture2D" uid="uid://c5d88fc47mdy5" path="res://assets/icons img.png" id="3_ia84y"]
 [ext_resource type="Texture2D" uid="uid://dtsy8dv1qi3e6" path="res://assets/Tray.png" id="4_6at21"]
@@ -57,6 +57,7 @@ sources/0 = SubResource("TileSetAtlasSource_kwfav")
 
 [node name="MainMenu" type="Node2D" unique_id=1358746474]
 script = ExtResource("1_oa53l")
+first_level_path = "uid://ckca48n0vgrhb"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1908753011]
 scale = Vector2(2, 2)

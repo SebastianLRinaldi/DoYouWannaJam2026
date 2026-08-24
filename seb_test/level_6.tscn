@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://kqkjc0s6bnte"]
 
-[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_j67x4"]
+[ext_resource type="Script" uid="uid://c1bj2pb7fxvgj" path="res://root.gd" id="1_j67x4"]
 [ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="2_u5hym"]
 [ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="3_3omgx"]
 [ext_resource type="Texture2D" uid="uid://dtsy8dv1qi3e6" path="res://assets/Tray.png" id="4_r2kxb"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dktke5bbkbeuw" path="res://seb_test/wounds/wound_hole_2.tscn" id="10_ql70k"]
 [ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="11_pohk0"]
 [ext_resource type="PackedScene" uid="uid://ccsb4044dr3j5" path="res://seb_test/cure/cure.tscn" id="12_vblxn"]
+[ext_resource type="PackedScene" uid="uid://c231qevlm2lw7" path="res://end_cards/success.tscn" id="13_3omgx"]
+[ext_resource type="PackedScene" uid="uid://bm6ne5kkuyhsh" path="res://end_cards/fail.tscn" id="14_r2kxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fpfx"]
 texture = ExtResource("2_u5hym")
@@ -60,7 +62,7 @@ sources/0 = SubResource("TileSetAtlasSource_l2xt8")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i52uw"]
 size = Vector2(11.5, 83.75)
 
-[node name="TestRoot" type="Node2D" unique_id=1282574010]
+[node name="Level6" type="Node2D" unique_id=1282574010]
 script = ExtResource("1_j67x4")
 
 [node name="BGTable" type="TileMapLayer" parent="." unique_id=830871772]
@@ -162,6 +164,15 @@ justification_flags = 0
 
 [node name="Cure" parent="." unique_id=1234432051 instance=ExtResource("12_vblxn")]
 position = Vector2(-259, 121)
+
+[node name="Success" parent="." unique_id=1385571150 instance=ExtResource("13_3omgx")]
+unique_name_in_owner = true
+retry_level_path = "uid://kqkjc0s6bnte"
+next_level_path = "uid://c03ab4ns23k3"
+
+[node name="Fail" parent="." unique_id=87594990 instance=ExtResource("14_r2kxb")]
+unique_name_in_owner = true
+retry_level_path = "uid://kqkjc0s6bnte"
 
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
