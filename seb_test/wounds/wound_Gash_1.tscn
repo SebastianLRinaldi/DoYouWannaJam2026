@@ -51,9 +51,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_guif6")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"wound_gash_1",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_gx3r7"]

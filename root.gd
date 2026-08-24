@@ -36,7 +36,7 @@ func _on_timer_timeout() -> void:
 	if blood_loss == prev_blood_loss:
 		total_score.update_score("Blood Retained", percent_remaining)
 	else:
-		total_score.update_score("Blood Left", percent_remaining)
+		total_score.update_score("Losing Blood ", percent_remaining)
 		prev_blood_loss = blood_loss
 
 

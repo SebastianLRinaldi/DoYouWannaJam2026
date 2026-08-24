@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dt5sbo4rsx1xy"]
 
-[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_snfu5"]
+[ext_resource type="Script" uid="uid://c1bj2pb7fxvgj" path="res://root.gd" id="1_snfu5"]
 [ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="2_i76tb"]
 [ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_ob757"]
 [ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="3_i76tb"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="8_hq2uk"]
 [ext_resource type="Texture2D" uid="uid://bhmsiwfuqgprp" path="res://assets/Curtain Tile set.png" id="10_i76tb"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nawdh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i76tb"]
 texture = ExtResource("2_i76tb")
 0:0/0 = 0
 1:0/0 = 0
@@ -31,7 +31,7 @@ texture = ExtResource("2_i76tb")
 3:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_eaexu"]
-sources/0 = SubResource("TileSetAtlasSource_nawdh")
+sources/0 = SubResource("TileSetAtlasSource_i76tb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfvtn"]
 texture = ExtResource("10_i76tb")

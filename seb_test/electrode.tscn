@@ -39,7 +39,7 @@ shape = SubResource("CircleShape2D_pst50")
 
 [node name="BandageSprite" type="AnimatedSprite2D" parent="." unique_id=1916427875]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.7294118)
+modulate = Color(1, 1, 1, 0.8392157)
 position = Vector2(1, 6.9999995)
 scale = Vector2(0.8886719, 0.8886718)
 sprite_frames = SubResource("SpriteFrames_qca1a")
