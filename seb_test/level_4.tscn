@@ -1,17 +1,20 @@
-[gd_scene format=4 uid="uid://b3vba5cxd7w3v"]
+[gd_scene format=4 uid="uid://cq7e4xkr8lvij"]
 
-[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_ki5ra"]
-[ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_hbe85"]
-[ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="3_6fpfx"]
-[ext_resource type="Texture2D" uid="uid://dtsy8dv1qi3e6" path="res://assets/Tray.png" id="3_ki5ra"]
-[ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="6_5aidg"]
-[ext_resource type="PackedScene" uid="uid://b7wv4lwqslq3e" path="res://seb_test/wounds/wound_Gash_2.tscn" id="7_5aidg"]
-[ext_resource type="PackedScene" uid="uid://ccsb4044dr3j5" path="res://seb_test/cure/cure.tscn" id="7_hbe85"]
-[ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="8_6fpfx"]
-[ext_resource type="PackedScene" uid="uid://dktke5bbkbeuw" path="res://seb_test/wounds/wound_hole_2.tscn" id="9_qcppq"]
+[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_0ru6n"]
+[ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="2_wg4fe"]
+[ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="3_vccxx"]
+[ext_resource type="Texture2D" uid="uid://dtsy8dv1qi3e6" path="res://assets/Tray.png" id="4_deytj"]
+[ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="5_gp71d"]
+[ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="6_hh0xp"]
+[ext_resource type="PackedScene" uid="uid://b7wv4lwqslq3e" path="res://seb_test/wounds/wound_Gash_2.tscn" id="7_rtpkc"]
+[ext_resource type="PackedScene" uid="uid://d4ny3qvkqx0lo" path="res://seb_test/wounds/wound_Gash_3.tscn" id="8_cehib"]
+[ext_resource type="PackedScene" uid="uid://cd7wnykjqodys" path="res://seb_test/wounds/wound_hole_1.tscn" id="9_8hrib"]
+[ext_resource type="PackedScene" uid="uid://dktke5bbkbeuw" path="res://seb_test/wounds/wound_hole_2.tscn" id="10_yp4mb"]
+[ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="11_hnhvd"]
+[ext_resource type="PackedScene" uid="uid://ccsb4044dr3j5" path="res://seb_test/cure/cure.tscn" id="12_22gar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fpfx"]
-texture = ExtResource("8_6fpfx")
+texture = ExtResource("2_wg4fe")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -33,7 +36,7 @@ texture = ExtResource("8_6fpfx")
 sources/0 = SubResource("TileSetAtlasSource_6fpfx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l2xt8"]
-texture = ExtResource("8_6fpfx")
+texture = ExtResource("2_wg4fe")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -58,7 +61,7 @@ sources/0 = SubResource("TileSetAtlasSource_l2xt8")
 size = Vector2(11.5, 83.75)
 
 [node name="TestRoot" type="Node2D" unique_id=1282574010]
-script = ExtResource("1_ki5ra")
+script = ExtResource("1_0ru6n")
 
 [node name="BGTable" type="TileMapLayer" parent="." unique_id=830871772]
 scale = Vector2(3, 3)
@@ -68,7 +71,7 @@ tile_set = SubResource("TileSet_l2xt8")
 [node name="Torso" type="Sprite2D" parent="." unique_id=310990252]
 position = Vector2(168.00003, 6)
 scale = Vector2(4.617187, 4.617187)
-texture = ExtResource("2_hbe85")
+texture = ExtResource("3_vccxx")
 
 [node name="FGSheet" type="TileMapLayer" parent="." unique_id=1460353741]
 scale = Vector2(3, 3)
@@ -78,9 +81,9 @@ tile_set = SubResource("TileSet_w5vtd")
 [node name="Tray" type="Sprite2D" parent="." unique_id=79102141]
 position = Vector2(-214.00002, -54.000008)
 scale = Vector2(3.2343752, 3.2343752)
-texture = ExtResource("3_ki5ra")
+texture = ExtResource("4_deytj")
 
-[node name="TotalScore" parent="." unique_id=676694139 instance=ExtResource("3_6fpfx")]
+[node name="TotalScore" parent="." unique_id=676694139 instance=ExtResource("5_gp71d")]
 unique_name_in_owner = true
 offset_left = 109.0
 offset_top = -158.0
@@ -103,15 +106,27 @@ shape = SubResource("RectangleShape2D_i52uw")
 [node name="WoundsContainer" type="Node2D" parent="." unique_id=1170791219]
 unique_name_in_owner = true
 
-[node name="WoundGashTwo" parent="WoundsContainer" unique_id=123513240 instance=ExtResource("7_5aidg")]
-position = Vector2(88.00001, 82.999985)
-scale = Vector2(2.8728747, 2.8728747)
+[node name="WoundGash1" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("6_hh0xp")]
+position = Vector2(127, 98)
+scale = Vector2(2.7647777, 2.7778563)
 
-[node name="WoundHoleTwo" parent="WoundsContainer" unique_id=112991419 instance=ExtResource("9_qcppq")]
-position = Vector2(194, -76)
-scale = Vector2(7.0489297, 7.0489297)
+[node name="WoundGashTwo" parent="WoundsContainer" unique_id=500617368 instance=ExtResource("7_rtpkc")]
+position = Vector2(229, -20)
+scale = Vector2(2.9642162, 2.9642162)
 
-[node name="EletrodeContainer" parent="." unique_id=436850603 instance=ExtResource("6_5aidg")]
+[node name="WoundGashThree" parent="WoundsContainer" unique_id=1836029190 instance=ExtResource("8_cehib")]
+position = Vector2(85, -11)
+scale = Vector2(3.714394, 3.714394)
+
+[node name="WoundHoleOne" parent="WoundsContainer" unique_id=626537733 instance=ExtResource("9_8hrib")]
+position = Vector2(168, 36)
+scale = Vector2(4.2200913, 4.2200913)
+
+[node name="WoundHoleTwo" parent="WoundsContainer" unique_id=385234010 instance=ExtResource("10_yp4mb")]
+position = Vector2(109, -89)
+scale = Vector2(5.4971166, 5.4971166)
+
+[node name="EletrodeContainer" parent="." unique_id=436850603 instance=ExtResource("11_hnhvd")]
 unique_name_in_owner = true
 position = Vector2(-114, 110)
 
@@ -137,7 +152,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 justification_flags = 0
 
-[node name="Cure" parent="." unique_id=1234432051 instance=ExtResource("7_hbe85")]
+[node name="Cure" parent="." unique_id=1234432051 instance=ExtResource("12_22gar")]
 position = Vector2(-259, 121)
 
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
