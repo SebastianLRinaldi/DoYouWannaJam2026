@@ -1,0 +1,139 @@
+[gd_scene format=4 uid="uid://jixitd1m2e31"]
+
+[ext_resource type="Script" uid="uid://d1uunaoukpc37" path="res://level_transition.gd" id="1_oukt6"]
+[ext_resource type="Texture2D" uid="uid://bhmsiwfuqgprp" path="res://assets/Curtain Tile set.png" id="2_bwmlx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pj2mc"]
+texture = ExtResource("2_bwmlx")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4r5tf"]
+sources/0 = SubResource("TileSetAtlasSource_pj2mc")
+
+[sub_resource type="Animation" id="Animation_pj2mc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-650.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [650.0]
+}
+
+[sub_resource type="Animation" id="Animation_2gi1b"]
+resource_name = "close"
+length = 1.5666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-650.0, -336.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [650.0, 336.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_load_new_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_oukt6"]
+resource_name = "open"
+length = 1.5666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-336.0, -650.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [336.0, 650.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pj2mc"]
+_data = {
+&"RESET": SubResource("Animation_pj2mc"),
+&"close": SubResource("Animation_2gi1b"),
+&"open": SubResource("Animation_oukt6")
+}
+
+[node name="LevelTransition" type="Node2D" unique_id=1605268477]
+process_mode = 3
+z_index = 99
+script = ExtResource("1_oukt6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1275679617]
+
+[node name="Left" type="TileMapLayer" parent="." unique_id=1121154395]
+position = Vector2(-650, 30)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAD5//z/AAABAAAAAAD6//z/AAABAAAAAAD7//z/AAABAAAAAAD8//z/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAAAAAAEAPz/AAABAAAAAAAGAPz/AAABAAAAAAAFAPz/AAABAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD7//7/AAAAAAAAAAD7//3/AAAAAAAAAAD6//3/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAD5/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD5////AAAAAAAAAAD5//7/AAAAAAAAAAD5//3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAD///z/AAABAAAAAAAAAPz/AAABAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_4r5tf")
+
+[node name="Right" type="TileMapLayer" parent="." unique_id=451734159]
+position = Vector2(650, 30)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAD5//z/AAABAAAAAAD6//z/AAABAAAAAAD7//z/AAABAAAAAAD8//z/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAAAAAAEAPz/AAABAAAAAAAGAPz/AAABAAAAAAAFAPz/AAABAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8/wAAAAAAAAAAAAD8////AAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD7//7/AAAAAAAAAAD7//3/AAAAAAAAAAD6//3/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAD5/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD5////AAAAAAAAAAD5//7/AAAAAAAAAAD5//3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAGAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAD///z/AAABAAAAAAAAAPz/AAABAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_4r5tf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1940934344]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_pj2mc")
