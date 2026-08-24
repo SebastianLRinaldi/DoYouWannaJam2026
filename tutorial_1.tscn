@@ -1,0 +1,130 @@
+[gd_scene format=4 uid="uid://clf8qeuex1ilw"]
+
+[ext_resource type="Texture2D" uid="uid://bhmsiwfuqgprp" path="res://assets/Curtain Tile set.png" id="1_44a5x"]
+[ext_resource type="Texture2D" uid="uid://dtsp6ddet4h3v" path="res://assets/tutorial images2.png" id="2_xf30c"]
+[ext_resource type="Texture2D" uid="uid://xqp56gifaiqq" path="res://assets/Quad.png" id="3_7tcts"]
+[ext_resource type="Texture2D" uid="uid://b3wigs2w2utw2" path="res://assets/Bandage_used.png" id="4_cw060"]
+[ext_resource type="Texture2D" uid="uid://sx2mo81kguqh" path="res://assets/Wounds_complete_for_real.png" id="5_geg8h"]
+[ext_resource type="Texture2D" uid="uid://ba55qhii5yr0v" path="res://assets/Bandage.png" id="6_qwk4i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44a5x"]
+texture = ExtResource("1_44a5x")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eaexu"]
+sources/0 = SubResource("TileSetAtlasSource_44a5x")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaexu"]
+atlas = ExtResource("2_xf30c")
+region = Rect2(15, 5.5, 54, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y13l"]
+atlas = ExtResource("2_xf30c")
+region = Rect2(84, 5.5, 48, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iau2"]
+atlas = ExtResource("2_xf30c")
+region = Rect2(150, 7.5, 42, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3w5a"]
+atlas = ExtResource("3_7tcts")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqak6"]
+atlas = ExtResource("4_cw060")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oouoc"]
+atlas = ExtResource("5_geg8h")
+region = Rect2(7, 6.5, 57, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26cvv"]
+atlas = ExtResource("6_qwk4i")
+
+[node name="Tutorial_1" type="Node2D" unique_id=551999212]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1612970146]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1786012642]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD2//v/AAABAAAAAAD3//v/AAABAAAAAAD4//v/AAABAAAAAAD5//v/AAABAAAAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAABAPv/AAABAAAAAAACAPv/AAABAAAAAAADAPv/AAABAAAAAAAEAPv/AAABAAAAAAAFAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAABAAAAAAAIAPv/AAABAAAAAAAJAPv/AAABAAAAAAD2//z/AAAAAAAAAAD2//3/AAAAAAAAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAD3//z/AAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD3////AAAAAAAAAAD3/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAD6//3/AAAAAAAAAAD5//3/AAAAAAAAAAD5//7/AAAAAAAAAAD5////AAAAAAAAAAD6//7/AAAAAAAAAAD4//3/AAAAAAAAAAD4////AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD4//7/AAAAAAAAAAD4//z/AAAAAAAAAAD7//z/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6////AAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD6/wMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD4/wMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_eaexu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=514583971]
+position = Vector2(187, -95.00001)
+scale = Vector2(2.6386862, 2.6386862)
+texture = SubResource("AtlasTexture_eaexu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1074204009]
+position = Vector2(151, 4)
+scale = Vector2(2.6386862, 2.6386862)
+texture = SubResource("AtlasTexture_0y13l")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=415787500]
+position = Vector2(182.00002, 108)
+scale = Vector2(2.6386862, 2.6386862)
+texture = SubResource("AtlasTexture_8iau2")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=488114629]
+position = Vector2(-270, -93)
+scale = Vector2(1.4130927, 1.350593)
+texture = SubResource("AtlasTexture_w3w5a")
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=990418884]
+position = Vector2(270, 108)
+scale = Vector2(1.4130927, 1.350593)
+texture = SubResource("AtlasTexture_w3w5a")
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=2136512710]
+position = Vector2(270.00003, 117.99999)
+scale = Vector2(1.1330903, 1.0829748)
+texture = SubResource("AtlasTexture_gqak6")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=460302889]
+position = Vector2(-270, -93)
+scale = Vector2(0.8130927, 0.7771304)
+texture = SubResource("AtlasTexture_oouoc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1546611916]
+position = Vector2(-269, 67)
+scale = Vector2(1.4130927, 1.350593)
+texture = SubResource("AtlasTexture_w3w5a")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=502853909]
+position = Vector2(-269, 66.999985)
+scale = Vector2(0.8130927, 0.7771304)
+texture = SubResource("AtlasTexture_oouoc")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=794703231]
+position = Vector2(-270, 75)
+scale = Vector2(1.1330926, 1.082977)
+texture = SubResource("AtlasTexture_26cvv")
+
+[node name="Button" type="Button" parent="." unique_id=1192345409]
+offset_left = -176.00002
+offset_top = -125.000015
+offset_right = 283.41785
+offset_bottom = -25.000015
+scale = Vector2(0.70088696, 0.70088696)
+text = "Oh no! your patient has a wound that needs to be patched up asap! Wounds will show you what state they are in visibly and get worse if untreated."
+alignment = 0
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="." unique_id=1228808630]
+offset_left = -222.00002
+offset_top = -36.0
+offset_right = 250.25871
+offset_bottom = 87.0
+scale = Vector2(0.70088696, 0.70088696)
+text = "To treat the wound, you will need to apply a bandaid. Bandaids will prevent not only the wound but also the patient from getting worse along with healing said patient overtime."
+alignment = 0
+autowrap_mode = 2
+
+[node name="Button3" type="Button" parent="." unique_id=1992034960]
+offset_left = -205.0
+offset_top = 58.000004
+offset_right = 267.25873
+offset_bottom = 198.12119
+scale = Vector2(0.70088696, 0.70088696)
+text = "Each level will have a time limit. that's how long you have to save the patient. At the same time, bandaids will deplete in effectiveness, visualized by how much blood is showing through. Bandaids on for too long will result in faster health depletion."
+alignment = 0
+autowrap_mode = 2

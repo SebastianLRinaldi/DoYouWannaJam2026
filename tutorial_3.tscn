@@ -1,0 +1,102 @@
+[gd_scene format=4 uid="uid://6hok0c84iodc"]
+
+[ext_resource type="Texture2D" uid="uid://bhmsiwfuqgprp" path="res://assets/Curtain Tile set.png" id="1_p1v4s"]
+[ext_resource type="Texture2D" uid="uid://dtsp6ddet4h3v" path="res://assets/tutorial images2.png" id="2_78nai"]
+[ext_resource type="Texture2D" uid="uid://sx2mo81kguqh" path="res://assets/Wounds_complete_for_real.png" id="3_kudgh"]
+[ext_resource type="Texture2D" uid="uid://c0vr63nd6egmk" path="res://assets/Da_treatment.png" id="4_cygc4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_puqc5"]
+texture = ExtResource("1_p1v4s")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rus3m"]
+sources/0 = SubResource("TileSetAtlasSource_puqc5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaexu"]
+atlas = ExtResource("2_78nai")
+region = Rect2(21, 135.5, 47, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26cvv"]
+atlas = ExtResource("3_kudgh")
+region = Rect2(266.5724, 0, 47.916016, 48.072075)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqak6"]
+atlas = ExtResource("3_kudgh")
+region = Rect2(329.09274, 0, 55.90204, 46.199844)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oouoc"]
+atlas = ExtResource("4_cygc4")
+region = Rect2(5.7403946, 0, 31.773842, 15.525816)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iau2"]
+atlas = ExtResource("2_78nai")
+region = Rect2(87, 134.5, 43, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3w5a"]
+atlas = ExtResource("2_78nai")
+region = Rect2(152, 138.5, 40, 35)
+
+[node name="Tutorial_3" type="Node2D" unique_id=1630346121]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1025124682]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1532093935]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD2//v/AAABAAAAAAD3//v/AAABAAAAAAD4//v/AAABAAAAAAD5//v/AAABAAAAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAABAPv/AAABAAAAAAACAPv/AAABAAAAAAADAPv/AAABAAAAAAAEAPv/AAABAAAAAAAFAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAABAAAAAAAIAPv/AAABAAAAAAAJAPv/AAABAAAAAAD2//z/AAAAAAAAAAD2//3/AAAAAAAAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAD3//z/AAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD3////AAAAAAAAAAD3/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAD6//3/AAAAAAAAAAD5//3/AAAAAAAAAAD5//7/AAAAAAAAAAD5////AAAAAAAAAAD6//7/AAAAAAAAAAD4//3/AAAAAAAAAAD4////AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD4//7/AAAAAAAAAAD4//z/AAAAAAAAAAD7//z/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6////AAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD6/wMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD4/wMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_rus3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1313410820]
+position = Vector2(137.00002, -95.00001)
+scale = Vector2(2.5266132, 2.5266132)
+texture = SubResource("AtlasTexture_eaexu")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=264503282]
+position = Vector2(263, -91)
+scale = Vector2(1.1903048, 1.1903048)
+texture = SubResource("AtlasTexture_26cvv")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=119122216]
+position = Vector2(195, 4)
+scale = Vector2(1.1903048, 1.1903048)
+texture = SubResource("AtlasTexture_gqak6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=369431787]
+position = Vector2(209, -106)
+scale = Vector2(2.5266132, 2.5266132)
+texture = SubResource("AtlasTexture_oouoc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=393180504]
+position = Vector2(127.99999, -15.000004)
+scale = Vector2(2.5266132, 2.5266132)
+texture = SubResource("AtlasTexture_oouoc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=140262628]
+position = Vector2(50.999992, -2.9999924)
+scale = Vector2(2.5266132, 2.5266132)
+texture = SubResource("AtlasTexture_8iau2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=15834120]
+position = Vector2(132, 105.000015)
+scale = Vector2(2.5266132, 2.5266132)
+texture = SubResource("AtlasTexture_w3w5a")
+
+[node name="Button" type="Button" parent="." unique_id=994531833]
+offset_left = -307.0
+offset_top = -120.0
+offset_right = 192.22903
+offset_bottom = 3.0
+scale = Vector2(0.7030841, 0.7030841)
+text = "If a wound is not treated soon enough, it will get infected. if this happens, you can use the cure to treat the wound. once it's applied, you can cover it with a bandage and continue the level."
+alignment = 0
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="." unique_id=1946379391]
+offset_left = -299.0
+offset_top = 57.000004
+offset_right = 200.22903
+offset_bottom = 180.0
+scale = Vector2(0.7030841, 0.7030841)
+text = "The goal of each level is to keep the patient's health above 40%. At the end of the level, if the patient's health is at 40% or below, the patient dies and you fail the level. treating wounds effectively within the time limit is the win condition."
+alignment = 0
+autowrap_mode = 2
