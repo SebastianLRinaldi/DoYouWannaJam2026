@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ccsb4044dr3j5"]
+
+[ext_resource type="Script" uid="uid://kunt1k7qrfob" path="res://seb_test/cure/cure.gd" id="1_tgpqm"]
+[ext_resource type="Texture2D" uid="uid://c0vr63nd6egmk" path="res://assets/Da_treatment.png" id="3_rwgm2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4o2q"]
+radius = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thtmh"]
+atlas = ExtResource("3_rwgm2")
+region = Rect2(10, 5, 25, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opq2f"]
+size = Vector2(75, 20)
+
+[node name="Cure" type="Area2D" unique_id=1234432051]
+script = ExtResource("1_tgpqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2050458011]
+shape = SubResource("CircleShape2D_u4o2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707902310]
+scale = Vector2(2.9444442, 2.9444444)
+texture = SubResource("AtlasTexture_thtmh")
+
+[node name="MouseArea2D" type="Area2D" parent="." unique_id=700635794]
+unique_name_in_owner = true
+z_as_relative = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MouseArea2D" unique_id=1507904321]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_opq2f")
+
+[connection signal="input_event" from="MouseArea2D" to="." method="_on_mouse_area_2d_input_event"]

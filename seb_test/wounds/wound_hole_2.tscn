@@ -1,28 +1,93 @@
 [gd_scene format=3 uid="uid://dktke5bbkbeuw"]
 
 [ext_resource type="Script" uid="uid://wt5e3vc414mk" path="res://seb_test/wounds/wound_zone.gd" id="1_rpxa5"]
-[ext_resource type="Texture2D" uid="uid://qqe046lyqe6r" path="res://assets/Wounds (1).png" id="2_ow82o"]
+[ext_resource type="Texture2D" uid="uid://sx2mo81kguqh" path="res://assets/Wounds_complete_for_real.png" id="2_rpxa5"]
 [ext_resource type="PackedScene" uid="uid://3xggxi4t0i6n" path="res://seb_test/floating_score_label.tscn" id="3_fpynh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sqw2b"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ow82o"]
+radius = 4.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vyht1"]
-atlas = ExtResource("2_ow82o")
-region = Rect2(85, 272.5, 29, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow82o"]
+atlas = ExtResource("2_rpxa5")
+region = Rect2(0, 256, 64, 64)
 
-[node name="WoundHole" type="Area2D" unique_id=3999878]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpynh"]
+atlas = ExtResource("2_rpxa5")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yodq3"]
+atlas = ExtResource("2_rpxa5")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmw2r"]
+atlas = ExtResource("2_rpxa5")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtnth"]
+atlas = ExtResource("2_rpxa5")
+region = Rect2(256, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljlc1"]
+atlas = ExtResource("2_rpxa5")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpynh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow82o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpynh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yodq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmw2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtnth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljlc1")
+}],
+"loop": 1,
+"name": &"wound_gash_1",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_yodq3"]
+offsets = PackedFloat32Array(0.07079646, 0.7920354, 1)
+colors = PackedColorArray(0.5398627, 8.663535e-07, 1.92523e-07, 1, 1, 0.39018378, 0.51553327, 1, 1, 1, 1, 0)
+
+[node name="WoundHoleTwo" type="Area2D" unique_id=3999878]
 script = ExtResource("1_rpxa5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766022042]
-shape = SubResource("CircleShape2D_sqw2b")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=80381317]
+shape = SubResource("CircleShape2D_ow82o")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005826290]
-position = Vector2(2.4999995, 0.99999887)
-scale = Vector2(1.3448277, 1.3333334)
-texture = SubResource("AtlasTexture_vyht1")
-
-[node name="FloatingScoreLabel" parent="Sprite2D" unique_id=168567885 instance=ExtResource("3_fpynh")]
+[node name="WoundSprite" type="AnimatedSprite2D" parent="." unique_id=1304875315]
 unique_name_in_owner = true
+position = Vector2(-1, 1.9999999)
+scale = Vector2(0.45312503, 0.40624997)
+sprite_frames = SubResource("SpriteFrames_fpynh")
+animation = &"wound_gash_1"
+
+[node name="FloatingScoreLabel" parent="WoundSprite" unique_id=168567885 instance=ExtResource("3_fpynh")]
+unique_name_in_owner = true
+position = Vector2(-0.49019557, 2.5166406e-07)
+
+[node name="BloodEmiter" type="CPUParticles2D" parent="." unique_id=1746284520]
+unique_name_in_owner = true
+lifetime = 2.0
+emission_shape = 1
+emission_sphere_radius = 4.85
+gravity = Vector2(0, 10)
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(1, 0.17710057, 0.34337336, 1)
+color_ramp = SubResource("Gradient_yodq3")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
