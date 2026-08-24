@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://daq3gtm6jpxjx"]
 
 [ext_resource type="Script" uid="uid://bk6t563i7px1q" path="res://sound/music_manager.gd" id="1_ad4ov"]
+[ext_resource type="AudioStream" uid="uid://bqetqx41m20pd" path="res://sound/btn_press.wav" id="2_t7qjx"]
 [ext_resource type="AudioStream" uid="uid://b7itlgkxhutgh" path="res://sound/Vibe Mountain - Operatic 3.mp3" id="2_wbmjh"]
+[ext_resource type="AudioStream" uid="uid://b7ho6jkr33nca" path="res://sound/failed.wav" id="3_5gb73"]
+[ext_resource type="AudioStream" uid="uid://dgk3ypgbqbaih" path="res://sound/bandaid_rip.wav" id="4_5gb73"]
+[ext_resource type="AudioStream" uid="uid://btoevdbjruck" path="res://sound/goop.mp3" id="5_5gb73"]
+[ext_resource type="AudioStream" uid="uid://c6c2471dd4koe" path="res://sound/yippy.mp3" id="6_pdj21"]
 
 [node name="MusicManager" type="Node2D" unique_id=1436193525]
+process_mode = 3
 script = ExtResource("1_ad4ov")
+sfx = Array[AudioStream]([ExtResource("2_t7qjx"), ExtResource("3_5gb73"), ExtResource("4_5gb73"), ExtResource("5_5gb73"), ExtResource("6_pdj21")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1730076332]
 unique_name_in_owner = true
 stream = ExtResource("2_wbmjh")
 volume_db = -18.0
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1892642160]
+unique_name_in_owner = true
+bus = &"SFX"

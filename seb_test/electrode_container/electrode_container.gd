@@ -22,7 +22,7 @@ func random_donut_point() -> Vector2:
 
 
 func _on_spawn_bandaid_button_pressed() -> void:
-
+	
 	if not moving:
 		moving = true
 		var ET:Electrode = ELECTRODE.instantiate()
@@ -40,7 +40,7 @@ func _on_spawn_bandaid_button_pressed() -> void:
 		tween.tween_property(ET, "global_position", end, 0.02)
 		#tween.set_trans(Tween.TRANS_QUAD)
 		#tween.set_ease(Tween.EASE_OUT)
-		
+		MusicManager.play_sfx(0)
 		tween.tween_property(ET,"scale",Vector2(0.5,1.5),0.05)
 		tween.tween_property(ET,"scale",Vector2(1.5,0.5),0.05)
 		tween.tween_property(ET,"scale",Vector2(1,1),0.05)

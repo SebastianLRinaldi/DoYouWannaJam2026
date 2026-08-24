@@ -44,10 +44,12 @@ func _on_timer_timeout() -> void:
 	
 	var level_done = all_fully_healed()
 	if level_done:
+		MusicManager.play_sfx(4)
 		success.show()
 		get_tree().paused = true
 	
 	elif percent_remaining <= 40:
+		MusicManager.play_sfx(1)
 		fail.show()
 		get_tree().paused = true
 	

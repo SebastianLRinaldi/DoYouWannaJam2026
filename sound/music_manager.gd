@@ -1,23 +1,14 @@
 extends Node2D
 
+@export var sfx: Array[AudioStream]
 
 @onready var music_player: AudioStreamPlayer2D = %MusicPlayer
-
+@onready var sfx_player: AudioStreamPlayer2D = %SFXPlayer
 
 func _ready() -> void:
-	music_player.play()
-	#music_player.bus = "amb"
+	start_music()
 
-
-func change_pitch(new_pitch:float):
-	music_player.pitch_scale = new_pitch
-
-
-
-func change_music(new_music: AudioStream):
-	if music_player.stream == new_music:
-		return
-
+func start_music():
 	var tween = create_tween()
 
 	# Fade out current music
@@ -26,7 +17,6 @@ func change_music(new_music: AudioStream):
 	await tween.finished
 
 	# Change track
-	music_player.stream = new_music
 	music_player.play()
 	# Fade in new music
 	tween = create_tween()
@@ -35,4 +25,9 @@ func change_music(new_music: AudioStream):
 
 func _on_music_player_finished() -> void:
 	print("Finished Music")
-	music_player.play()
+	start_music()
+
+func play_sfx(sfx_idx:int):
+	sfx_player.stream = sfx[sfx_idx]
+	sfx_player.play()
+	

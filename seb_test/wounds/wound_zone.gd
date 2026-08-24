@@ -24,6 +24,7 @@ func _on_area_entered(area) -> void:
 	elif area is Cure:
 		if bandage_attached_to_wound: return
 		if not infected_wound: return
+		MusicManager.play_sfx(3)
 		update_state("try_to_cure_wound")
 	
 
@@ -32,6 +33,7 @@ func _on_area_exited(area) -> void:
 		if bandage_attached_to_wound != area: return
 		update_state("stop_healing")
 		bandage_attached_to_wound = null
+		MusicManager.play_sfx(2)
 	elif area is Cure:
 		pass
 
