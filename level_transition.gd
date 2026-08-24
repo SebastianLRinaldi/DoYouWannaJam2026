@@ -15,7 +15,7 @@ func _load_new_scene() -> void:
 	animation_player.play("open")
 	get_tree().call_deferred("change_scene_to_file", scene_to_load)
 	var tween = create_tween()
-	tween.tween_interval(2.0)
+	tween.tween_interval(1.0)
 	await tween.finished
 	get_tree().paused = false
 	
