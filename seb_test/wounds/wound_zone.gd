@@ -6,20 +6,13 @@ extends Area2D
 @onready var blood_emiter: CPUParticles2D = %BloodEmiter
 @onready var infection_cure_timer: Timer = %InfectionCureTimer
 
-
 var energy = 100
-
 
 var bandage_attached_to_wound:Electrode = null
 
 var fully_healed = false
 var infected_wound = false
 var curing_wound = false
-
-
-#func _ready() -> void:
-	##blood_emiter.emitting = true
-
 
 func _on_area_entered(area) -> void:
 	if area is Electrode:
@@ -81,7 +74,7 @@ func update_state(state_name):
 		
 		
 		_:
-			print("Unknown action")
+			print("Unknown state")
 
 """
 0 - big
@@ -93,7 +86,7 @@ func update_state(state_name):
 """
 func update_wound_frame(frame_idx: int):
 	wound_sprite.frame = frame_idx
-	print("A-FRAME: ", wound_sprite.frame)
+	#print("A-FRAME: ", wound_sprite.frame)
 
 func _on_heal_success():
 	wound_sprite.frame += 1
@@ -102,14 +95,14 @@ func _on_heal_success():
 		update_state("stop_healing")
 	else:
 		update_state("try_to_heal")
-	print("B-FRAME: ", wound_sprite.frame)
+	#print("B-FRAME: ", wound_sprite.frame)
 	
 
 func _on_infected_wound():
 	update_state("infected_wound")
 
 func _on_infection_cure_timer_timeout() -> void:
-	print("TIME OUT")
+	#print("TIME OUT")
 	update_state("cured_wound")
 
 
@@ -130,7 +123,7 @@ func calc_current_loss():
 		float_points(blood_loss_rate, "-")
 	else:
 		float_points(blood_loss_rate, "")
-	print("blood_loss_rate:", blood_loss_rate)
+	#print("blood_loss_rate:", blood_loss_rate)
 	
 	energy -= blood_loss_rate
 	

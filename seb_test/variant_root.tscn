@@ -33,13 +33,13 @@ texture = ExtResource("2_i76tb")
 [sub_resource type="TileSet" id="TileSet_eaexu"]
 sources/0 = SubResource("TileSetAtlasSource_i76tb")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfvtn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nawdh"]
 texture = ExtResource("10_i76tb")
 0:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0y13l"]
-sources/0 = SubResource("TileSetAtlasSource_lfvtn")
+sources/0 = SubResource("TileSetAtlasSource_nawdh")
 
 [node name="TestRoot" type="Node2D" unique_id=1282574010]
 script = ExtResource("1_snfu5")
