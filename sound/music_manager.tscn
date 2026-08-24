@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b7ho6jkr33nca" path="res://sound/failed.wav" id="3_5gb73"]
 [ext_resource type="AudioStream" uid="uid://dgk3ypgbqbaih" path="res://sound/bandaid_rip.wav" id="4_5gb73"]
 [ext_resource type="AudioStream" uid="uid://btoevdbjruck" path="res://sound/goop.mp3" id="5_5gb73"]
-[ext_resource type="AudioStream" uid="uid://c6c2471dd4koe" path="res://sound/yippy.mp3" id="6_pdj21"]
+[ext_resource type="AudioStream" uid="uid://w8cagvmo0atq" path="res://sound/yippy-short.mp3" id="6_pdj21"]
 
 [node name="MusicManager" type="Node2D" unique_id=1436193525]
 process_mode = 3
