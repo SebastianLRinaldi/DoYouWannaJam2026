@@ -1,17 +1,20 @@
-[gd_scene format=4 uid="uid://b3vba5cxd7w3v"]
+[gd_scene format=4 uid="uid://kqkjc0s6bnte"]
 
-[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_ki5ra"]
-[ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_hbe85"]
-[ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="3_6fpfx"]
-[ext_resource type="Texture2D" uid="uid://dtsy8dv1qi3e6" path="res://assets/Tray.png" id="3_ki5ra"]
-[ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="6_5aidg"]
-[ext_resource type="PackedScene" uid="uid://b7wv4lwqslq3e" path="res://seb_test/wounds/wound_Gash_2.tscn" id="7_5aidg"]
-[ext_resource type="PackedScene" uid="uid://ccsb4044dr3j5" path="res://seb_test/cure/cure.tscn" id="7_hbe85"]
-[ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="8_6fpfx"]
-[ext_resource type="PackedScene" uid="uid://dktke5bbkbeuw" path="res://seb_test/wounds/wound_hole_2.tscn" id="9_qcppq"]
+[ext_resource type="Script" uid="uid://c21d2ol0liqai" path="res://root.gd" id="1_j67x4"]
+[ext_resource type="Texture2D" uid="uid://b6wdajnlr2cof" path="res://assets/Tileset.png" id="2_u5hym"]
+[ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="3_3omgx"]
+[ext_resource type="Texture2D" uid="uid://dtsy8dv1qi3e6" path="res://assets/Tray.png" id="4_r2kxb"]
+[ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="5_mpome"]
+[ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="6_w7vrb"]
+[ext_resource type="PackedScene" uid="uid://b7wv4lwqslq3e" path="res://seb_test/wounds/wound_Gash_2.tscn" id="7_d506k"]
+[ext_resource type="PackedScene" uid="uid://d4ny3qvkqx0lo" path="res://seb_test/wounds/wound_Gash_3.tscn" id="8_6s302"]
+[ext_resource type="PackedScene" uid="uid://cd7wnykjqodys" path="res://seb_test/wounds/wound_hole_1.tscn" id="9_x1k8a"]
+[ext_resource type="PackedScene" uid="uid://dktke5bbkbeuw" path="res://seb_test/wounds/wound_hole_2.tscn" id="10_ql70k"]
+[ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="11_pohk0"]
+[ext_resource type="PackedScene" uid="uid://ccsb4044dr3j5" path="res://seb_test/cure/cure.tscn" id="12_vblxn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fpfx"]
-texture = ExtResource("2_5rr72")
+texture = ExtResource("2_u5hym")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -33,7 +36,7 @@ texture = ExtResource("2_5rr72")
 sources/0 = SubResource("TileSetAtlasSource_6fpfx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l2xt8"]
-texture = ExtResource("2_5rr72")
+texture = ExtResource("2_u5hym")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -58,7 +61,7 @@ sources/0 = SubResource("TileSetAtlasSource_l2xt8")
 size = Vector2(11.5, 83.75)
 
 [node name="TestRoot" type="Node2D" unique_id=1282574010]
-script = ExtResource("1_bjebc")
+script = ExtResource("1_j67x4")
 
 [node name="BGTable" type="TileMapLayer" parent="." unique_id=830871772]
 scale = Vector2(3, 3)
@@ -68,7 +71,7 @@ tile_set = SubResource("TileSet_l2xt8")
 [node name="Torso" type="Sprite2D" parent="." unique_id=310990252]
 position = Vector2(168.00003, 6)
 scale = Vector2(4.617187, 4.617187)
-texture = ExtResource("3_gyffv")
+texture = ExtResource("3_3omgx")
 
 [node name="FGSheet" type="TileMapLayer" parent="." unique_id=1460353741]
 scale = Vector2(3, 3)
@@ -78,9 +81,9 @@ tile_set = SubResource("TileSet_w5vtd")
 [node name="Tray" type="Sprite2D" parent="." unique_id=79102141]
 position = Vector2(-214.00002, -54.000008)
 scale = Vector2(3.2343752, 3.2343752)
-texture = ExtResource("4_1pe0h")
+texture = ExtResource("4_r2kxb")
 
-[node name="TotalScore" parent="." unique_id=676694139 instance=ExtResource("5_27bay")]
+[node name="TotalScore" parent="." unique_id=676694139 instance=ExtResource("5_mpome")]
 unique_name_in_owner = true
 offset_left = 109.0
 offset_top = -158.0
@@ -103,15 +106,35 @@ shape = SubResource("RectangleShape2D_i52uw")
 [node name="WoundsContainer" type="Node2D" parent="." unique_id=1170791219]
 unique_name_in_owner = true
 
-[node name="WoundGashTwo" parent="WoundsContainer" unique_id=123513240 instance=ExtResource("7_5aidg")]
-position = Vector2(88.00001, 82.999985)
-scale = Vector2(2.8728747, 2.8728747)
+[node name="WoundGash1" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("6_w7vrb")]
+position = Vector2(254, 92)
+scale = Vector2(2.7647777, 2.7778563)
 
-[node name="WoundHoleTwo" parent="WoundsContainer" unique_id=112991419 instance=ExtResource("9_qcppq")]
-position = Vector2(194, -76)
-scale = Vector2(7.0489297, 7.0489297)
+[node name="WoundGashOne" parent="WoundsContainer" unique_id=1506248587 instance=ExtResource("6_w7vrb")]
+position = Vector2(249.99998, -6.000001)
+scale = Vector2(2.592502, 2.6047657)
 
-[node name="EletrodeContainer" parent="." unique_id=436850603 instance=ExtResource("7_ggavl")]
+[node name="WoundGashTwo" parent="WoundsContainer" unique_id=500617368 instance=ExtResource("7_d506k")]
+position = Vector2(158, 58)
+scale = Vector2(2.9642162, 2.9642162)
+
+[node name="WoundGashThree" parent="WoundsContainer" unique_id=1836029190 instance=ExtResource("8_6s302")]
+position = Vector2(91, 7)
+scale = Vector2(3.714394, 3.714394)
+
+[node name="WoundHoleOne" parent="WoundsContainer" unique_id=626537733 instance=ExtResource("9_x1k8a")]
+position = Vector2(242.99998, -78.99999)
+scale = Vector2(4.2200913, 4.2200913)
+
+[node name="WoundHoleTwo" parent="WoundsContainer" unique_id=385234010 instance=ExtResource("10_ql70k")]
+position = Vector2(172, -37)
+scale = Vector2(5.4971166, 5.4971166)
+
+[node name="WoundHoleOne2" parent="WoundsContainer" unique_id=2046214144 instance=ExtResource("9_x1k8a")]
+position = Vector2(106, -79)
+scale = Vector2(4.4745, 4.4745)
+
+[node name="EletrodeContainer" parent="." unique_id=436850603 instance=ExtResource("11_pohk0")]
 unique_name_in_owner = true
 position = Vector2(-114, 110)
 
@@ -137,7 +160,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 justification_flags = 0
 
-[node name="Cure" parent="." unique_id=1234432051 instance=ExtResource("8_ubhxj")]
+[node name="Cure" parent="." unique_id=1234432051 instance=ExtResource("12_vblxn")]
 position = Vector2(-259, 121)
 
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
