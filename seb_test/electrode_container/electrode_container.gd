@@ -9,8 +9,7 @@ const SPAWN_CURVE = preload("uid://co4qvjv0wuqx4")
 
 const ELECTRODE = preload("uid://bx35ptbx7ue23")
 
-var x = 0
-var y = 0
+
 var moving = false
 
 func random_donut_point() -> Vector2:
@@ -35,8 +34,7 @@ func _on_spawn_bandaid_button_pressed() -> void:
 		#audio_stream_player_2d.stream = move_sfx.pick_random()
 		#tween.tween_callback(audio_stream_player_2d.play)
 		var start = global_position
-		var ran_x_range = randf_range(0, 130)
-		var end = start + Vector2(0,-80) + random_donut_point()
+		var end = start + Vector2(0,-100) + random_donut_point()
 		
 		
 		tween.tween_property(ET, "global_position", end, 0.02)
@@ -48,7 +46,5 @@ func _on_spawn_bandaid_button_pressed() -> void:
 		tween.tween_property(ET,"scale",Vector2(1,1),0.05)
 		#tween.tween_interval(0.35) # Wait for half a second
 		await tween.finished
-		x += 1
-		if x >= 6:
-			x = 0
+
 		moving = false

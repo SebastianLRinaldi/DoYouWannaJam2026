@@ -9,5 +9,7 @@ extends RichTextLabel
 	#GlobalManager.update_score.connect(_on_update_score)
 	#
 #
-func update_score(score_name:String, new_score:int):
-	self.text =  score_name + ": " + str(new_score)
+func update_score(score_name:String, new_score:float):
+	
+	
+	self.text =  score_name + ": " + str("%.f" %new_score) + "%"

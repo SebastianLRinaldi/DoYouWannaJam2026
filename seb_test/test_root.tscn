@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://c1bj2pb7fxvgj" path="res://root.gd" id="1_qnkri"]
 [ext_resource type="Texture2D" uid="uid://b5nid733v7hvp" path="res://assets/Torso.png" id="2_3xia5"]
 [ext_resource type="PackedScene" uid="uid://bl4vv5moxr5xj" path="res://seb_test/electrode_container/electrode_container.tscn" id="3_55jlr"]
+[ext_resource type="PackedScene" uid="uid://cynmgy21bkq3b" path="res://seb_test/score_label.tscn" id="3_i52uw"]
+[ext_resource type="Texture2D" uid="uid://j6haidynkg8t" path="res://icon.svg" id="4_i52uw"]
 [ext_resource type="PackedScene" uid="uid://8tjica7ecefy" path="res://seb_test/wounds/wound_Gash_1.tscn" id="4_u5xtw"]
-[ext_resource type="PackedScene" uid="uid://b7wv4lwqslq3e" path="res://seb_test/wounds/wound_Gash_2.tscn" id="5_2bl7c"]
-[ext_resource type="PackedScene" uid="uid://d4ny3qvkqx0lo" path="res://seb_test/wounds/wound_Gash_3.tscn" id="6_eiafq"]
-[ext_resource type="PackedScene" uid="uid://cd7wnykjqodys" path="res://seb_test/wounds/wound_hole.tscn" id="7_mneca"]
-[ext_resource type="PackedScene" uid="uid://dktke5bbkbeuw" path="res://seb_test/wounds/wound_hole_1.tscn" id="8_6n8vh"]
-[ext_resource type="PackedScene" uid="uid://cg5u0iug23dl6" path="res://seb_test/wounds/wound_hole_2.tscn" id="9_l7jx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i52uw"]
+size = Vector2(14.5, 131)
 
 [node name="TestRoot" type="Node2D" unique_id=1282574010]
 script = ExtResource("1_qnkri")
@@ -18,29 +18,70 @@ position = Vector2(165.00006, 2.0000153)
 scale = Vector2(4.617187, 4.617187)
 texture = ExtResource("2_3xia5")
 
+[node name="TotalScore" parent="." unique_id=676694139 instance=ExtResource("3_i52uw")]
+unique_name_in_owner = true
+offset_left = -154.0
+offset_top = -100.0
+offset_right = -41.0
+offset_bottom = -77.0
+text = "Blood Left: XXX"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=60641299]
+position = Vector2(-279, -85)
+scale = Vector2(0.109374985, 1)
+texture = ExtResource("4_i52uw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1474021829]
+position = Vector2(-119, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1266491738]
+position = Vector2(-160.25, -112)
+shape = SubResource("RectangleShape2D_i52uw")
+
 [node name="WoundsContainer" type="Node2D" parent="." unique_id=1170791219]
 unique_name_in_owner = true
 
-[node name="WoundHole" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("4_u5xtw")]
-position = Vector2(77, -81)
+[node name="WoundGash1" parent="WoundsContainer" unique_id=3999878 instance=ExtResource("4_u5xtw")]
+position = Vector2(96.00001, -88)
+scale = Vector2(2.7647777, 2.7778563)
 
-[node name="WoundHole2" parent="WoundsContainer" unique_id=215309593 instance=ExtResource("5_2bl7c")]
-position = Vector2(196, -89)
+[node name="WoundGash2" parent="WoundsContainer" unique_id=1703878724 instance=ExtResource("4_u5xtw")]
+position = Vector2(203, -89.99999)
+scale = Vector2(2.8842134, 2.8978572)
 
-[node name="WoundHole3" parent="WoundsContainer" unique_id=1609617696 instance=ExtResource("6_eiafq")]
-position = Vector2(79, -28)
+[node name="WoundGash3" parent="WoundsContainer" unique_id=55282965 instance=ExtResource("4_u5xtw")]
+position = Vector2(98, 8)
+scale = Vector2(2.884213, 2.8978567)
 
-[node name="WoundHole4" parent="WoundsContainer" unique_id=893970855 instance=ExtResource("7_mneca")]
-position = Vector2(210, -11)
-
-[node name="WoundHole5" parent="WoundsContainer" unique_id=1624224944 instance=ExtResource("8_6n8vh")]
-position = Vector2(76, 30)
-
-[node name="WoundHole6" parent="WoundsContainer" unique_id=75583556 instance=ExtResource("9_l7jx5")]
-position = Vector2(207, 58)
+[node name="WoundGash4" parent="WoundsContainer" unique_id=1887567411 instance=ExtResource("4_u5xtw")]
+position = Vector2(213, 70.99998)
+scale = Vector2(3.352154, 3.4178557)
 
 [node name="EletrodeContainer" parent="." unique_id=436850603 instance=ExtResource("3_55jlr")]
 unique_name_in_owner = true
-position = Vector2(-257, 111)
+position = Vector2(-93, 107)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=911244452]
+
+[node name="Timer" type="Timer" parent="." unique_id=1676329787]
+wait_time = 2.0
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1538743420]
+offset_left = -314.0
+offset_top = -14.0
+offset_right = -221.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 7
+text = "Slowing Glide bandage on table edge to unstick from finger"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 0
+
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
