@@ -89,7 +89,12 @@ scale_amount_max = 3.0
 color = Color(1, 0.17710057, 0.34337336, 1)
 color_ramp = SubResource("Gradient_dr3lo")
 
+[node name="InfectionCureTimer" type="Timer" parent="." unique_id=1442089943]
+unique_name_in_owner = true
+wait_time = 10.0
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="InfectionCureTimer" to="." method="_on_infection_cure_timer_timeout"]
