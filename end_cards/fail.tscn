@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bm6ne5kkuyhsh"]
+
+[ext_resource type="Script" uid="uid://bealvne3costn" path="res://end_cards/fail.gd" id="1_hf02q"]
+[ext_resource type="Texture2D" uid="uid://bf4171u27k5c1" path="res://assets/End_results.png" id="2_8iyky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0otvb"]
+atlas = ExtResource("2_8iyky")
+region = Rect2(6, 14, 42, 23)
+
+[node name="Fail" type="Node2D" unique_id=87594990]
+process_mode = 3
+script = ExtResource("1_hf02q")
+
+[node name="FailSprite" type="Sprite2D" parent="." unique_id=1825441873]
+position = Vector2(-3.8146973e-06, -20.000002)
+scale = Vector2(6.207641, 6.2076397)
+texture = SubResource("AtlasTexture_0otvb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2009193883]
+
+[node name="RetryLevel" type="Button" parent="." unique_id=1861822339]
+unique_name_in_owner = true
+offset_left = -53.0
+offset_top = 75.0
+offset_right = 53.0
+offset_bottom = 106.0
+text = "RETRY LEVEL
+"
+
+[node name="MainMenu" type="Button" parent="." unique_id=2051296799]
+unique_name_in_owner = true
+offset_left = -52.0
+offset_top = 112.0
+offset_right = 52.0
+offset_bottom = 143.0
+text = "MAIN MENU"
+
+[connection signal="pressed" from="RetryLevel" to="." method="_on_retry_level_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

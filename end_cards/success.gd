@@ -1,0 +1,20 @@
+class_name SuccessScreen
+extends Node2D
+
+@export_file("*.tscn") var retry_level_path
+@export_file("*.tscn") var next_level_path
+
+
+func _ready() -> void:
+	hide()
+
+func _on_next_level_pressed() -> void:
+	LevelTransition.change_scene_to(next_level_path)
+
+
+func _on_retry_level_pressed() -> void:
+	LevelTransition.change_scene_to(retry_level_path)
+
+
+func _on_main_menu_pressed() -> void:
+	LevelTransition.change_scene_to("res://main_menu/main_menu.tscn")

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c231qevlm2lw7"]
+
+[ext_resource type="Script" uid="uid://djt4gtsvcl5y6" path="res://end_cards/success.gd" id="1_ad30l"]
+[ext_resource type="Texture2D" uid="uid://bf4171u27k5c1" path="res://assets/End_results.png" id="2_sojc2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad30l"]
+atlas = ExtResource("2_sojc2")
+region = Rect2(16, 73, 34, 46)
+
+[node name="Success" type="Node2D" unique_id=1385571150]
+process_mode = 3
+script = ExtResource("1_ad30l")
+
+[node name="SuccessSprite" type="Sprite2D" parent="." unique_id=553898106]
+position = Vector2(2.9802322e-08, -31)
+scale = Vector2(4.154412, 4.1544113)
+texture = SubResource("AtlasTexture_ad30l")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1750710838]
+
+[node name="NextLevel" type="Button" parent="." unique_id=1906067274]
+unique_name_in_owner = true
+offset_left = 2.0
+offset_top = 78.0
+offset_right = 100.0
+offset_bottom = 109.0
+text = "NEXT LEVEL
+"
+
+[node name="RetryLevel" type="Button" parent="." unique_id=812039546]
+unique_name_in_owner = true
+offset_left = -108.0
+offset_top = 78.0
+offset_right = -2.0
+offset_bottom = 109.0
+text = "RETRY LEVEL
+"
+
+[node name="MainMenu" type="Button" parent="." unique_id=1288140319]
+unique_name_in_owner = true
+offset_left = -51.0
+offset_top = 112.0
+offset_right = 53.0
+offset_bottom = 143.0
+text = "MAIN MENU"
+
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="RetryLevel" to="." method="_on_retry_level_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
