@@ -4,6 +4,10 @@ extends Node2D
 
 @onready var total_score: ScoreLabel = %TotalScore
 
+@onready var success: SuccessScreen = %Success
+@onready var fail: FailScreen = %Fail
+
+
 var wounds = []
 var prev_blood_loss = INF
 var total_points = 100
@@ -26,7 +30,6 @@ func _on_timer_timeout() -> void:
 	for zone_idx in wounds.size():
 		wounds[zone_idx].calc_current_loss() # CHANGE THIS FOR EACH WOUND
 
-	
 	var blood_loss = 0 
 	for wound in wounds:
 		blood_loss += wound.energy
@@ -38,7 +41,23 @@ func _on_timer_timeout() -> void:
 	else:
 		total_score.update_score("Losing Blood ", percent_remaining)
 		prev_blood_loss = blood_loss
+	
+	var level_done = all_fully_healed()
+	if level_done:
+		success.show()
+		get_tree().paused = true
+	
+	elif percent_remaining <= 40:
+		fail.show()
+		get_tree().paused = true
+	
 
+
+func all_fully_healed():
+	for wound:WoundZone in wounds:
+		if not wound.fully_healed:
+			return false
+	return true
 
 
 func _on_area_2d_mouse_exited() -> void:
