@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://6hok0c84iodc"]
 
+[ext_resource type="Script" uid="uid://bscxcbvxx74om" path="res://tutorial_3.gd" id="1_78nai"]
 [ext_resource type="Texture2D" uid="uid://bhmsiwfuqgprp" path="res://assets/Curtain Tile set.png" id="1_p1v4s"]
 [ext_resource type="Texture2D" uid="uid://dtsp6ddet4h3v" path="res://assets/tutorial images2.png" id="2_78nai"]
 [ext_resource type="Texture2D" uid="uid://sx2mo81kguqh" path="res://assets/Wounds_complete_for_real.png" id="3_kudgh"]
@@ -38,6 +39,7 @@ atlas = ExtResource("2_78nai")
 region = Rect2(152, 138.5, 40, 35)
 
 [node name="Tutorial_3" type="Node2D" unique_id=1630346121]
+script = ExtResource("1_78nai")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1025124682]
 
@@ -100,3 +102,26 @@ scale = Vector2(0.7030841, 0.7030841)
 text = "The goal of each level is to keep the patient's health above 40%. At the end of the level, if the patient's health is at 40% or below, the patient dies and you fail the level. treating wounds effectively within the time limit is the win condition."
 alignment = 0
 autowrap_mode = 2
+
+[node name="NextScreen" type="Button" parent="." unique_id=1984225260]
+unique_name_in_owner = true
+offset_left = 231.0
+offset_top = 129.0
+offset_right = 317.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 13
+text = "MAIN MENU
+"
+
+[node name="PreScreen" type="Button" parent="." unique_id=731541130]
+unique_name_in_owner = true
+offset_left = 187.0
+offset_top = 129.0
+offset_right = 227.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 13
+text = "PREV
+"
+
+[connection signal="pressed" from="NextScreen" to="." method="_on_next_screen_pressed"]
+[connection signal="pressed" from="PreScreen" to="." method="_on_pre_screen_pressed"]
