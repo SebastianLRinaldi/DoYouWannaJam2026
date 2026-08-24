@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalManager="*uid://ckwy3unyjrnr5"
 LevelTransition="*uid://jixitd1m2e31"
+MusicManager="*uid://daq3gtm6jpxjx"
 
 [display]
 

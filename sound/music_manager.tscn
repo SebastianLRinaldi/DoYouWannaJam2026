@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://daq3gtm6jpxjx"]
+
+[ext_resource type="Script" uid="uid://bk6t563i7px1q" path="res://sound/music_manager.gd" id="1_ad4ov"]
+[ext_resource type="AudioStream" uid="uid://b7itlgkxhutgh" path="res://sound/Vibe Mountain - Operatic 3.mp3" id="2_wbmjh"]
+
+[node name="MusicManager" type="Node2D" unique_id=1436193525]
+script = ExtResource("1_ad4ov")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1730076332]
+unique_name_in_owner = true
+stream = ExtResource("2_wbmjh")
+volume_db = -18.0

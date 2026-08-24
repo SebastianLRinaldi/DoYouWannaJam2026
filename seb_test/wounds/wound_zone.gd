@@ -23,6 +23,7 @@ func _on_area_entered(area) -> void:
 		update_state("try_to_heal")
 	elif area is Cure:
 		if bandage_attached_to_wound: return
+		if not infected_wound: return
 		update_state("try_to_cure_wound")
 	
 
